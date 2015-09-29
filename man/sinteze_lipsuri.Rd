@@ -22,10 +22,15 @@ mai putin de nr lipsuri definit in missing
 Citeste tabelele din sinteze climatice si alege perioada (procentele) cu
 date lipsa
 }
+\details{
+Tabelele sunt descarcate din baza de date Sinteze Climatologice Lunare
+}
 \examples{
 # Citeste normalele de temperatura cu 5\% lipsuri
-
 temp5 <- sinteze_lipsuri(system.file("extdata/tt_1981_2000.csv",
 package = "climatetools"),5)
+}
+\author{
+Alexandru Dumitrescu
 }
 

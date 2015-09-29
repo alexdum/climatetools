@@ -4,6 +4,9 @@
 #' sinteze climatologice
 #' @param missing numar intreg reprezentand cat la suta din date lipsa sa fie
 #' luate in calcul
+#' @details
+#' Tabelele sunt descarcate din baza de date Sinteze Climatologice Lunare
+#' @author Alexandru Dumitrescu
 #' @return data.frame cu tabelul continand cele 12 luni de la statiile care au
 #' mai putin de nr lipsuri definit in missing
 #' @examples

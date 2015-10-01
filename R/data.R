@@ -17,4 +17,5 @@
 #'   \item table: width of top of diamond relative to widest point (43--95)
 #' }
 #'  @source METEO ROMANIA \url{http://www.meteoromania.ro/}
-"stations"
+#'  @example
+data(weather_stations)

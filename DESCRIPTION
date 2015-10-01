@@ -8,6 +8,5 @@ Author: Alexandru Dumitrescu
 Maintainer: Alexandru Dumitrescu <alexandru.dumitrescu@gmail.com>
 Description: More about what it does (maybe more than one line)
 License: GPL (>= 2)
-LazyData: TRUE
 URL: http://github.com/alexdum/climatetools
 BugReports: http://github.com/alexdum/climatetools/issues

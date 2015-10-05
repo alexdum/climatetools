@@ -17,7 +17,11 @@
 #' }
 
 #'  @source METEO ROMANIA \url{http://www.meteoromania.ro/}
-#'  @examples data(ws)
+#'  @examples
+#'  data(ws)
+#'  str(ws)
+#'  hist(ws$Z)
+#'
 #'  @usage data(ws)
 'ws'
 

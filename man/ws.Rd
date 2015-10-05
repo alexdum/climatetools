@@ -29,6 +29,8 @@ Romania.
 }
 \examples{
 data(ws)
+ str(ws)
+ hist(ws$Z)
 }
 \keyword{datasets}
 

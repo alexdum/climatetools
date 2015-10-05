@@ -1,6 +1,6 @@
 #' Citeste tabelele din sinteze climatice si alege perioada (procentele) cu
 #' date lipsa
-#' @param input caracter reprezentand calea catre tabelul *.csv descarcat din
+#' @param path caracter reprezentand calea catre tabelul *.csv descarcat din
 #' sinteze climatologice
 #' @param missing numar intreg reprezentand cat la suta din date lipsa sa fie
 #' luate in calcul
@@ -15,8 +15,9 @@
 #' package = "climatetools"),5)
 #' @export
 
-sinteze_lipsuri<-function(input,missing) {
-  norm<-read.table(input,skip=4,nrows =262,sep=";",na.strings="-")
+sinteze_lipsuri<-function(path,missing)
+{
+  norm<-read.table(path,skip=4,nrows =262,sep=";",na.strings="-")
   lipsuri<-read.table(input,skip=267,sep=";",na.strings="-")
   lipsuri[is.na(lipsuri)]<-0
   norm<-norm[lipsuri[,15]<= missing,]

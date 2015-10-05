@@ -3,7 +3,7 @@
 \docType{data}
 \name{ws}
 \alias{ws}
-\title{Weather stations METEO ROMANIA}
+\title{Weather stations METEO ROMANIA.}
 \format{A data frame with 163 rows and 14 variables:
 \itemize{
   \item X: longitude in m (Stereo 70)

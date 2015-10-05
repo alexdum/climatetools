@@ -5,10 +5,10 @@
 \title{Citeste tabelele din sinteze climatice si alege perioada (procentele) cu
 date lipsa}
 \usage{
-sinteze_lipsuri(input, missing)
+sinteze_lipsuri(path, missing)
 }
 \arguments{
-\item{input}{caracter reprezentand calea catre tabelul *.csv descarcat din
+\item{path}{caracter reprezentand calea catre tabelul *.csv descarcat din
 sinteze climatologice}
 
 \item{missing}{numar intreg reprezentand cat la suta din date lipsa sa fie

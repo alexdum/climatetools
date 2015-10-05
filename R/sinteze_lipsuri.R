@@ -18,7 +18,7 @@
 sinteze_lipsuri<-function(path,missing)
 {
   norm<-read.table(path,skip=4,nrows =262,sep=";",na.strings="-")
-  lipsuri<-read.table(input,skip=267,sep=";",na.strings="-")
+  lipsuri<-read.table(path,skip=267,sep=";",na.strings="-")
   lipsuri[is.na(lipsuri)]<-0
   norm<-norm[lipsuri[,15]<= missing,]
   return(norm[,1:14])

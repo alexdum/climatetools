@@ -1,7 +1,8 @@
-#' Weather stations METEO ROMANIA
+#' Weather stations METEO ROMANIA.
 #'
 #' A dataset containing the metada of the meteorological stations from
 #' Romania.
+#'
 #' @format A data frame with 163 rows and 14 variables:
 #' \itemize{
 #'   \item X: longitude in m (Stereo 70)
@@ -15,13 +16,14 @@
 #'   \item depth: total depth percentage = z / mean(x, y) = 2 * z / (x + y) (43--79)
 #'   \item table: width of top of diamond relative to widest point (43--95)
 #' }
-
+#'
 #'  @source METEO ROMANIA \url{http://www.meteoromania.ro/}
+#'
 #'  @examples
 #'  data(ws)
 #'  str(ws)
 #'  hist(ws$Z)
 #'
 #'  @usage data(ws)
-'ws'
+"ws"
 

@@ -12,7 +12,7 @@
 #'   \item X:       Longitude in meters (Stereo 70; EPSG:3844)
 #'   \item Y:       Latitude in meters (Stereo 70; EPSG:3844)
 #'   \item Z:       Altitude (m)
-#'   \item SURSA_XY:Source of coordinates
+#'   \item SURSA_XY: Source of coordinates
 #'   \item SURSA_Z: Source of altitude
 #'   \item Lon:     Longitude in degrees (WGS84; EPSG:4326)
 #'   \item Lat:     Latitude in degrees (WGS84; EPSG:4326)
@@ -21,9 +21,9 @@
 #'  @source METEO ROMANIA \url{http://www.meteoromania.ro/}
 #'
 #'  @examples
-#'  data(ws)
-#'  str(ws)
-#'  hist(ws$Z)
+#' data(ws)
+#' str(ws)
+#' hist(ws$Z)
 #'
 #'
 #'  @usage data(ws)

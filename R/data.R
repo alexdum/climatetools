@@ -1,4 +1,4 @@
-#' Weather stations METEO ROMANIA.
+#' Weather stations METEOROMANIA.
 #'
 #' Metadata of  meteorological stations from Romania.
 #'

@@ -26,6 +26,7 @@
 #' hist(ws$Z)
 #'
 #'
+#'
 #'  @usage data(ws)
 "ws"
 

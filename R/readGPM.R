@@ -6,7 +6,7 @@
 #' @return raster object with layer names from dataset
 #' @examples
 #' # Read h5 gmp file to raster
-#' r<-readGPM(file=system.file("extdata/3B-HHR-E.MS.MRG.3IMERG.20151001-S000000-E002959.0000.V03E.RT-H5",
+#' r <- readGPM(file=system.file("extdata/3B-HHR-E.MS.MRG.3IMERG.20151001-S000000-E002959.0000.V03E.RT-H5",
 #' package = "climatetools"),dataset="precipitationCal")
 #' plot(r)
 #' @export

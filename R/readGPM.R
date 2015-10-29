@@ -3,10 +3,11 @@
 #' @details
 #' Fisierele sunt desarcate de aici ftp://jsimpson.pps.eosdis.nasa.gov/data/imerg/early/
 #' @return raster object with layer names from dataset
-#' @example
-#' Read h5 file save locally
-#' r<-readGMP(file=system.file("extdata/file=3B-HHR-E.MS.MRG.3IMERG.20151001-S000000-E002959.0000.V03E.RT-H5",
+#' @examples
+#' read h5 gmp file to raster
+#' r<-readGMP(file=system.file("extdata/3B-HHR-E.MS.MRG.3IMERG.20151001-S000000-E002959.0000.V03E.RT-H5",
 #' package = "climatetools"),dataset="precipitationCal")
+#' @export
 
 readGPM<-function (file,dataset)
 {

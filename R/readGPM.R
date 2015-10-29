@@ -32,7 +32,7 @@ readGPM<-function (file,dataset)
   r<- raster::calc(r, fun.na)
   #adauga nume fisier
   names(r)<-dataset
-  h5::h5close(file)
+  h5::h5close(hdf)
 
   #if(dataset="HQprecipSource")
 

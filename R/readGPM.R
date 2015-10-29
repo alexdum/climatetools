@@ -23,7 +23,7 @@ readGPM<-function (file,dataset)
   #   list.groups(file)
 
   #read dataset
-  pp <- hdf[paste0("/Grid/",file)]
+  pp <- hdf[paste0("/Grid/",dataset)]
 
   #raster definition
 

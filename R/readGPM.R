@@ -17,7 +17,7 @@ readGPM<-function (file,dataset)
   fun.na <- function(x) { x[x<= -9999] <- NA; return(x)}
 
 
-  hdf <- h5::h5file(product,mode="r+")
+  hdf <- h5::h5file(file,mode="r+")
 
   #   list.datasets(file, recursive = TRUE)
   #   list.groups(file)

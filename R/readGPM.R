@@ -1,3 +1,4 @@
+#' Read GMP data to raster file
 #' @param file cclea catre fisierul h5
 #' @param dataset tipul de dataset care se doreste a se citi
 #' @details

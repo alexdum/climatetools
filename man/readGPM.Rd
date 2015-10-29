@@ -2,6 +2,7 @@
 % Please edit documentation in R/readGPM.R
 \name{readGPM}
 \alias{readGPM}
+\title{Read GMP data to raster file}
 \usage{
 readGPM(file, dataset)
 }
@@ -12,6 +13,9 @@ readGPM(file, dataset)
 }
 \value{
 raster object with layer names from dataset
+}
+\description{
+Read GMP data to raster file
 }
 \details{
 Fisierele sunt desarcate de aici ftp://jsimpson.pps.eosdis.nasa.gov/data/imerg/early/

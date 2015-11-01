@@ -12,7 +12,7 @@
 #' plot(r)
 #' @export
 
-readGPM<-function (file,dataset)
+read_gpm<-function (file,dataset)
 {
   # set missing values
   fun.na <- function(x) { x[x<= -9999] <- NA; return(x)}

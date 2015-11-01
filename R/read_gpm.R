@@ -14,8 +14,6 @@
 
 read_gpm<-function (file,dataset)
 {
-  # set missing values
-  fun.na <- function(x) { x[x<= -9999] <- NA; return(x)}
 
 
   hdf <- h5::h5file(file,mode="r+")

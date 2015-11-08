@@ -18,23 +18,24 @@
   \item SURSA_Z: Source of altitude
   \item Lon:     Longitude in degrees (WGS84; EPSG:4326)
   \item Lat:     Latitude in degrees (WGS84; EPSG:4326)
+}}
+\source{
+METEO ROMANIA \url{http://www.meteoromania.ro/}
 }
-
- @source METEO ROMANIA \url{http://www.meteoromania.ro/}
-
- @examples
+\usage{
+ws
+}
+\description{
+Metadata of  meteorological stations from Romania.
+}
+\examples{
 data(ws)
 str(ws)
 hist(ws$Z)
 
 
 
- @usage data(ws)}
-\usage{
-ws
-}
-\description{
-Metadata of  meteorological stations from Romania.
+ @usage data(ws)
 }
 \keyword{datasets}
 

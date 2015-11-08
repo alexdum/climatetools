@@ -18,9 +18,9 @@
 #'   \item Lat:     Latitude in degrees (WGS84; EPSG:4326)
 #' }
 #'
-#'  @source METEO ROMANIA \url{http://www.meteoromania.ro/}
+#' @source METEO ROMANIA \url{http://www.meteoromania.ro/}
 #'
-#'  @examples
+#' @examples
 #' data(ws)
 #' str(ws)
 #' hist(ws$Z)

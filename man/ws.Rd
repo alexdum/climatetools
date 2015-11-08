@@ -23,7 +23,7 @@
 METEO ROMANIA \url{http://www.meteoromania.ro/}
 }
 \usage{
-ws
+data(ws)
 }
 \description{
 Metadata of  meteorological stations from Romania.
@@ -35,7 +35,6 @@ hist(ws$Z)
 
 
 
- @usage data(ws)
 }
 \keyword{datasets}
 

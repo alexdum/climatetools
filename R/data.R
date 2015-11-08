@@ -27,6 +27,6 @@
 #'
 #'
 #'
-#'  @usage data(ws)
+#' @usage data(ws)
 "ws"
 

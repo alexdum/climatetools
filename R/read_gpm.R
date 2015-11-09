@@ -1,7 +1,6 @@
 #' Read GMP data to raster file
 #' @param file path to the H5 file
-#' @param dataset to be read from H5 file
-#'
+#' @param dataset to be read from H5 file; see details
 #' @param extent of the gridfile to be read in R, a vector of a length 4;
 #' order= xmin, xmax, ymin, ymax)
 #' @details
@@ -22,7 +21,7 @@
 #' source sensor identifier (index values);
 #' \item \code{IRkalmanFilterWeight}: Kalman filter weight for IR (percent);
 #' \item \code{IRprecipitation}: (mm/hr);
-#' \item \cdode{precipitationCal}: snapshot precipitation – calibrated (mm/hr);
+#' \item \code{precipitationCal}: snapshot precipitation – calibrated (mm/hr);
 #' \item \code{probabilityLiquidPrecipitation}: probability of liquid precipitation phase.
 #' }
 #' @return raster object with layer names from dataset
@@ -34,7 +33,7 @@
 #' plot(r)
 #' @export
 
-read_gpm<-function (file,dataset,extent=NA)
+read_gpm<-function (file,dataset,extent=NULL)
 {
 
 
@@ -48,7 +47,7 @@ read_gpm<-function (file,dataset,extent=NA)
 
 
   #raster definition cu sau fara si extent
-  if (all(is.na(extent)))
+  if (all(is.null(extent)))
   {
     r<-raster::raster(x=apply(pp[], 1, rev), xmn=-180, xmx=180, ymn=-90, ymx=90,crs="+init=epsg:4326")
 

@@ -1,9 +1,30 @@
 #' Read GMP data to raster file
-#' @param file cclea catre fisierul h5
-#' @param dataset tipul de dataset care se doreste a se citi
-#' @param extent of the gridfile to be read in R, a vector of a length 4; order= xmin, xmax, ymin, ymax)
+#' @param file path to the H5 file
+#' @param dataset to be read from H5 file
+#'
+#' @param extent of the gridfile to be read in R, a vector of a length 4;
+#' order= xmin, xmax, ymin, ymax)
 #' @details
+#' In order to download data from the PPS FTPs you must first register your email
+#' address with the Precipitation Processing System, using this page:
+#'  http://registration.pps.eosdis.nasa.gov/registration/.
+#'
 #' Fisierele sunt desarcate de aici ftp://jsimpson.pps.eosdis.nasa.gov/data/imerg/early/
+#'
+#' Data sets:
+#'
+#'\itemize{
+#' \item \code{HQobservationTime}: precipitation-relevant satellite passive microwave
+#' source time (min. into half hour);
+#' \item \code{HQprecipitation}: precipitation-relevant satellite passive microwave
+#' source (mm/hr);
+#' \item \code{HQprecipSource}: precipitation-relevant satellite passive microwave
+#' source sensor identifier (index values);
+#' \item \code{IRkalmanFilterWeight}: Kalman filter weight for IR (percent);
+#' \item \code{IRprecipitation}: (mm/hr);
+#' \item \cdode{precipitationCal}: snapshot precipitation – calibrated (mm/hr);
+#' \item \code{probabilityLiquidPrecipitation}: probability of liquid precipitation phase.
+#' }
 #' @return raster object with layer names from dataset
 #' @examples
 #' # Read h5 gmp file to raster

@@ -7,11 +7,12 @@
 read_gpm(file, dataset, extent = NA)
 }
 \arguments{
-\item{file}{cclea catre fisierul h5}
+\item{file}{path to the H5 file}
 
-\item{dataset}{tipul de dataset care se doreste a se citi}
+\item{dataset}{to be read from H5 file}
 
-\item{extent}{of the gridfile to be read in R, a vector of a length 4; order= xmin, xmax, ymin, ymax)}
+\item{extent}{of the gridfile to be read in R, a vector of a length 4;
+order= xmin, xmax, ymin, ymax)}
 }
 \value{
 raster object with layer names from dataset
@@ -20,7 +21,22 @@ raster object with layer names from dataset
 Read GMP data to raster file
 }
 \details{
+In order to download data from the PPS FTPs you must first register your email
+address with the Precipitation Processing System, using this page:
+ http://registration.pps.eosdis.nasa.gov/registration/.
+
 Fisierele sunt desarcate de aici ftp://jsimpson.pps.eosdis.nasa.gov/data/imerg/early/
+
+Data sets:
+
+\itemize{
+\item HQobservationTime: precipitation-relevant satellite passive microwave source time (min. into half hour);
+\item HQprecipitation: precipitation-relevant satellite passive microwave source (mm/hr);
+\item HQprecipSource: precipitation-relevant satellite passive microwave source sensor identifier (index values);
+\item RkalmanFilterWeight: Kalman filter weight for IR (percent);
+\item IRprecipitation: (mm/hr);
+\item precipitationCal: snapshot precipitation – calibrated (mm/hr).
+}
 }
 \examples{
 # Read h5 gmp file to raster

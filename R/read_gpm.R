@@ -24,21 +24,23 @@ read_gpm<-function (file,dataset,extent=NA)
 
   #read dataset
   pp <- hdf[paste0("/Grid/",dataset)]
-  lon <- hdf["/Grid/lon"]
-  lat <- hdf["/Grid/lat"]
 
-  xmin<-which.min(abs(lon[]-extent[1]))
-  xmax<-which.min(abs(lon[]-extent[2]))
-  ymin<-which.min(abs(lat[]-extent[3]))
-  ymax<-which.min(abs(lat[]-extent[4]))
 
-  #raster definition
-  if (is.na(extent))
+  #raster definition cu sau fara si extent
+  if (all(is.na(extent)))
   {
     r<-raster::raster(x=apply(pp[], 1, rev), xmn=-180, xmx=180, ymn=-90, ymx=90,crs="+init=epsg:4326")
 
   }
-  else {
+  else
+  {
+    lon <- hdf["/Grid/lon"]
+    lat <- hdf["/Grid/lat"]
+
+    xmin<-which.min(abs(lon[]-extent[1]))
+    xmax<-which.min(abs(lon[]-extent[2]))
+    ymin<-which.min(abs(lat[]-extent[3]))
+    ymax<-which.min(abs(lat[]-extent[4]))
     r<-raster::raster(x=apply(pp[][xmin:xmax,ymin:ymax], 1, rev), xmn=lon[][which.min(abs(lon[]-extent[1]))]-0.05,
                       xmx=lon[][which.min(abs(lon[]-extent[2]))]+0.05, ymn=lat[][which.min(abs(lat[]-extent[3]))]-0.05,
                       ymx=lat[][which.min(abs(lat[]-extent[4]))]+0.05,crs="+init=epsg:4326")

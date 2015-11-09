@@ -30,12 +30,16 @@ Fisierele sunt desarcate de aici ftp://jsimpson.pps.eosdis.nasa.gov/data/imerg/e
 Data sets:
 
 \itemize{
-\item HQobservationTime: precipitation-relevant satellite passive microwave source time (min. into half hour);
-\item HQprecipitation: precipitation-relevant satellite passive microwave source (mm/hr);
-\item HQprecipSource: precipitation-relevant satellite passive microwave source sensor identifier (index values);
-\item RkalmanFilterWeight: Kalman filter weight for IR (percent);
-\item IRprecipitation: (mm/hr);
-\item precipitationCal: snapshot precipitation – calibrated (mm/hr).
+\item \code{HQobservationTime}: precipitation-relevant satellite passive microwave
+source time (min. into half hour);
+\item \code{HQprecipitation}: precipitation-relevant satellite passive microwave
+source (mm/hr);
+\item \code{HQprecipSource}: precipitation-relevant satellite passive microwave
+source sensor identifier (index values);
+\item \code{IRkalmanFilterWeight}: Kalman filter weight for IR (percent);
+\item \code{IRprecipitation}: (mm/hr);
+\item \cdode{precipitationCal}: snapshot precipitation – calibrated (mm/hr);
+\item \code{probabilityLiquidPrecipitation}: probability of liquid precipitation phase.
 }
 }
 \examples{

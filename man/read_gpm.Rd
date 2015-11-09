@@ -4,12 +4,14 @@
 \alias{read_gpm}
 \title{Read GMP data to raster file}
 \usage{
-read_gpm(file, dataset)
+read_gpm(file, dataset, extent = NA)
 }
 \arguments{
 \item{file}{cclea catre fisierul h5}
 
 \item{dataset}{tipul de dataset care se doreste a se citi}
+
+\item{extent}{of the gridfile to be read in R, a vector of a length 4; order= xmin, xmax, ymin, ymax)}
 }
 \value{
 raster object with layer names from dataset

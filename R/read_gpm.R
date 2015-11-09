@@ -9,7 +9,7 @@
 #' # Read h5 gmp file to raster
 #' require(raster)
 #' r <- read_gpm(file=system.file("extdata/3B-HHR-E.MS.MRG.3IMERG.20151001-S000000-E002959.0000.V03E.RT-H5",
-#' package = "climatetools"),dataset="precipitationCal")
+#' package = "climatetools"),dataset="precipitationCal", extent=c(20,30,43,49))
 #' plot(r)
 #' @export
 

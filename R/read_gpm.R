@@ -45,6 +45,7 @@ read_gpm<-function (file,dataset,extent=NA)
 
   }
 
+  #transforma x<= -9999 in NA
   r<- raster::calc(r, fun.na)
   #adauga nume fisier
   names(r)<-dataset

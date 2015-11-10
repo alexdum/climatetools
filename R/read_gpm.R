@@ -2,7 +2,7 @@
 #' @param file a character string naming a H5 file
 #' @param dataset to be read from H5 file; see details
 #' @param extent of the gridfile to be read in R, a vector of a length 4;
-#' order= xmin, xmax, ymin, ymax)
+#' order= xmin (-180), xmax (180), ymin (-90), ymax (90)
 #' @details
 #' In order to download data from the PPS FTPs you must first register your email
 #' address with the Precipitation Processing System, using this page:
@@ -56,11 +56,11 @@ read_gpm<-function (file,dataset,extent=NULL)
   {
     lon <- hdf["/Grid/lon"]
     lat <- hdf["/Grid/lat"]
-    # eroarea daca lon si lat sunt mai mari sau mai mici
-    if(extent[1]<lon[c(1),] | extent[1]>lon[c(3600),]) stop ("the value of the xmin field must be between -179.90 and 179.90")
-    if(extent[2]<lon[c(1),] | extent[2]>lon[c(3600),]) stop ("the value of the xmax field must be between -179.90 and 179.90")
-    if(extent[3]<lat[c(1),] | extent[1]>lat[c(1800),]) stop ("the value of the ymin field must be between -89.95 and  -89.95")
-    if(extent[4]<lat[c(1),] | extent[1]>lat[c(1800),]) stop ("the value of the ymax field must be between -89.95 and  -89.95")
+#     # eroarea daca lon si lat sunt mai mari sau mai mici
+#     if(extent[1] < lon[c(1),]-0.05 | extent[1]>lon[c(3600),]+0.05) stop ("the value of the xmin field must be between -180 and 180")
+#     if(extent[2] < lon[c(1),]-0.05 | extent[2]>lon[c(3600),]+0.05) stop ("the value of the xmax field must be between -180 and 180")
+#     if(extent[3] < lat[c(1),]-0.05 | extent[3]>lat[c(1800),]+0.05) stop ("the value of the ymin field must be between -90 and 90")
+#     if(extent[4] < lat[c(1),]-0.05 | extent[4]>lat[c(1800),]+0.05) stop ("the value of the ymax field must be between -90 and 90")
 
     # alege indicii pentru extent crop
     xmin<-which.min(abs(lon[]-extent[1]))

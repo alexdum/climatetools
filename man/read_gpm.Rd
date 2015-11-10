@@ -12,7 +12,7 @@ read_gpm(file, dataset, extent = NULL)
 \item{dataset}{to be read from H5 file; see details}
 
 \item{extent}{of the gridfile to be read in R, a vector of a length 4;
-order= xmin, xmax, ymin, ymax)}
+order= xmin (-180), xmax (180), ymin (-90), ymax (90)}
 }
 \value{
 raster object with layer names from dataset

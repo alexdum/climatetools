@@ -57,19 +57,20 @@ read_gpm<-function (file,dataset,extent=NULL)
     lon <- hdf["/Grid/lon"]
     lat <- hdf["/Grid/lat"]
     # eroarea daca lon si lat sunt mai mari sau mai mici
-    if(extent[1]<lon[][1] | extent[1]>lon[][3600]) stop ("the value of the xmin field must be between -179.90 and 179.90")
-    if(extent[2]<lon[][1] | extent[2]>lon[][3600]) stop ("the value of the xmax field must be between -179.90 and 179.90")
-    if(extent[3]<lat[][1] | extent[1]>lat[][1800]) stop ("the value of the ymin field must be between -89.95 and  -89.95")
-    if(extent[4]<lat[][1] | extent[1]>lat[][1800]) stop ("the value of the ymax field must be between -89.95 and  -89.95")
+    if(extent[1]<lon[c(1),] | extent[1]>lon[c(3600),]) stop ("the value of the xmin field must be between -179.90 and 179.90")
+    if(extent[2]<lon[c(1),] | extent[2]>lon[c(3600),]) stop ("the value of the xmax field must be between -179.90 and 179.90")
+    if(extent[3]<lat[c(1),] | extent[1]>lat[c(1800),]) stop ("the value of the ymin field must be between -89.95 and  -89.95")
+    if(extent[4]<lat[c(1),] | extent[1]>lat[c(1800),]) stop ("the value of the ymax field must be between -89.95 and  -89.95")
 
     # alege indicii pentru extent crop
     xmin<-which.min(abs(lon[]-extent[1]))
     xmax<-which.min(abs(lon[]-extent[2]))
     ymin<-which.min(abs(lat[]-extent[3]))
     ymax<-which.min(abs(lat[]-extent[4]))
-    r<-raster::raster(x=apply(pp[][xmin:xmax,ymin:ymax], 1, rev), xmn=lon[][which.min(abs(lon[]-extent[1]))]-0.05,
-                      xmx=lon[][which.min(abs(lon[]-extent[2]))]+0.05, ymn=lat[][which.min(abs(lat[]-extent[3]))]-0.05,
-                      ymx=lat[][which.min(abs(lat[]-extent[4]))]+0.05,crs="+init=epsg:4326")
+    r<-raster::raster(x=apply(pp[c(xmin:xmax),c(ymin:ymax)], 1, rev), xmn=lon[xmin]-0.05,
+                      xmx=lon[xmax]+0.05, ymn=lat[ymin]-0.05,ymx=lat[ymax]+0.05,
+                      crs="+init=epsg:4326")
+
 
   }
 

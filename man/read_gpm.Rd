@@ -4,12 +4,12 @@
 \alias{read_gpm}
 \title{Read GMP data to raster file}
 \usage{
-read_gpm(file, dataset, extent = NA)
+read_gpm(file, dataset, extent = NULL)
 }
 \arguments{
-\item{file}{path to the H5 file}
+\item{file}{a character string naming a H5 file}
 
-\item{dataset}{to be read from H5 file}
+\item{dataset}{to be read from H5 file; see details}
 
 \item{extent}{of the gridfile to be read in R, a vector of a length 4;
 order= xmin, xmax, ymin, ymax)}

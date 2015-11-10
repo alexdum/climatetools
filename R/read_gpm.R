@@ -1,5 +1,5 @@
 #' Read GMP data to raster file
-#' @param file path to the H5 file
+#' @param file a character string naming a H5 file
 #' @param dataset to be read from H5 file; see details
 #' @param extent of the gridfile to be read in R, a vector of a length 4;
 #' order= xmin, xmax, ymin, ymax)
@@ -56,7 +56,13 @@ read_gpm<-function (file,dataset,extent=NULL)
   {
     lon <- hdf["/Grid/lon"]
     lat <- hdf["/Grid/lat"]
+    # eroarea daca lon si lat sunt mai mari sau mai mici
+    if(extent[1]<lon[][1] | extent[1]>lon[][3600]) stop ("the value of the xmin field must be between -179.90 and 179.90")
+    if(extent[2]<lon[][1] | extent[2]>lon[][3600]) stop ("the value of the xmax field must be between -179.90 and 179.90")
+    if(extent[3]<lat[][1] | extent[1]>lat[][1800]) stop ("the value of the ymin field must be between -89.95 and  -89.95")
+    if(extent[4]<lat[][1] | extent[1]>lat[][1800]) stop ("the value of the ymax field must be between -89.95 and  -89.95")
 
+    # alege indicii pentru extent crop
     xmin<-which.min(abs(lon[]-extent[1]))
     xmax<-which.min(abs(lon[]-extent[2]))
     ymin<-which.min(abs(lat[]-extent[3]))

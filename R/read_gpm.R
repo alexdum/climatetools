@@ -36,7 +36,8 @@
 read_gpm<-function (file,dataset,extent=NULL)
 {
 
-
+  if(extent[1]>extent[2]) stop ("xmin larger than xmax")
+  if(extent[3]>extent[4]) stop ("ymin larger than ymax")
   hdf <- h5::h5file(file,mode="r+")
 
   #   list.datasets(file, recursive = TRUE)
@@ -56,11 +57,10 @@ read_gpm<-function (file,dataset,extent=NULL)
   {
     lon <- hdf["/Grid/lon"]
     lat <- hdf["/Grid/lat"]
-#     # eroarea daca lon si lat sunt mai mari sau mai mici
-#     if(extent[1] < lon[c(1),]-0.05 | extent[1]>lon[c(3600),]+0.05) stop ("the value of the xmin field must be between -180 and 180")
-#     if(extent[2] < lon[c(1),]-0.05 | extent[2]>lon[c(3600),]+0.05) stop ("the value of the xmax field must be between -180 and 180")
-#     if(extent[3] < lat[c(1),]-0.05 | extent[3]>lat[c(1800),]+0.05) stop ("the value of the ymin field must be between -90 and 90")
-#     if(extent[4] < lat[c(1),]-0.05 | extent[4]>lat[c(1800),]+0.05) stop ("the value of the ymax field must be between -90 and 90")
+    #     # eroarea daca lon si lat sunt mai mari sau mai mici
+
+    #     if(extent[3] < lat[c(1),]-0.05 | extent[3]>lat[c(1800),]+0.05) stop ("the value of the ymin field must be between -90 and 90")
+    #     if(extent[4] < lat[c(1),]-0.05 | extent[4]>lat[c(1800),]+0.05) stop ("the value of the ymax field must be between -90 and 90")
 
     # alege indicii pentru extent crop
     xmin<-which.min(abs(lon[]-extent[1]))

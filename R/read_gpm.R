@@ -33,11 +33,15 @@
 #' plot(r)
 #' @export
 
-read_gpm<-function (file,dataset,extent=NULL)
+read_gpm<-function (file,dataset="precipitationCal",extent=NULL)
 {
+  #pentru extindere daca nu sunt cinsecutive coordonatele
+  if (all(!is.null(extent)))
+      {
+      if(extent[1]>extent[2]) stop ("xmin larger than xmax")
+      if(extent[3]>extent[4]) stop ("ymin larger than ymax")
+  }
 
-  if(extent[1]>extent[2]) stop ("xmin larger than xmax")
-  if(extent[3]>extent[4]) stop ("ymin larger than ymax")
   hdf <- h5::h5file(file,mode="r+")
 
   #   list.datasets(file, recursive = TRUE)

@@ -4,7 +4,7 @@
 \alias{read_gpm}
 \title{Read GMP data to raster file}
 \usage{
-read_gpm(file, dataset, extent = NULL)
+read_gpm(file, dataset = "precipitationCal", extent = NULL)
 }
 \arguments{
 \item{file}{a character string naming a H5 file}

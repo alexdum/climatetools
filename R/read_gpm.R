@@ -1,16 +1,17 @@
 #' Read GMP data to raster file
-#' @param file a character string naming a H5 file
-#' @param dataset to be read from H5 file; see details
+#' @param file a character string naming a H5 file.
+#' @param dataset to be read from H5 file; see details.
 #' @param extent of the gridfile to be read in R, a vector of a length 4;
-#' order= xmin (-180), xmax (180), ymin (-90), ymax (90)
+#' order= xmin (-180), xmax (180), ymin (-90), ymax (90).
 #' @details
 #' In order to download data from the PPS FTPs you must first register your email
 #' address with the Precipitation Processing System, using this page:
 #'  http://registration.pps.eosdis.nasa.gov/registration/.
 #'
-#' Fisierele sunt desarcate de aici ftp://jsimpson.pps.eosdis.nasa.gov/data/imerg/early/
+#' The 3IMERGHH data file can be downloaded from here:  \url{ftp://jsimpson.pps.eosdis.nasa.gov/data/imerg/}.
 #'
-#' Data sets:
+#' Data sets: list of data fields, their variable names (in the data structure),
+#' and the data units for 3IMERGHH data files:
 #'
 #'\itemize{
 #' \item \code{HQobservationTime}: precipitation-relevant satellite passive microwave
@@ -22,6 +23,7 @@
 #' \item \code{IRkalmanFilterWeight}: Kalman filter weight for IR (percent);
 #' \item \code{IRprecipitation}: (mm/hr);
 #' \item \code{precipitationCal}: snapshot precipitation – calibrated (mm/hr);
+#' \item \code{precipitationUncal}: snapshot precipitation – uncalibrated (mm/hr);
 #' \item \code{probabilityLiquidPrecipitation}: probability of liquid precipitation phase.
 #' }
 #' @return raster object with layer names from dataset

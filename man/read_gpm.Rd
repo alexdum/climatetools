@@ -2,7 +2,7 @@
 % Please edit documentation in R/read_gpm.R
 \name{read_gpm}
 \alias{read_gpm}
-\title{Read GMP data to raster file}
+\title{Read GPM (IMERG) data to raster file}
 \usage{
 read_gpm(file, dataset = "precipitationCal", extent = NULL)
 }
@@ -18,7 +18,7 @@ order= xmin (-180), xmax (180), ymin (-90), ymax (90).}
 raster object with layer names from dataset
 }
 \description{
-Read GMP data to raster file
+Read GPM (IMERG) data to raster file
 }
 \details{
 In order to download data from the PPS FTPs you must first register your email
@@ -39,7 +39,8 @@ source (mm/hr);
 source sensor identifier (index values);
 \item \code{IRkalmanFilterWeight}: Kalman filter weight for IR (percent);
 \item \code{IRprecipitation}: (mm/hr);
-\item \code{precipitationCal}: snapshot precipitation – calibrated (mm/hr);
+\item \code{precipitationCal}: snapshot precipitation – calibrated (mm/hr),
+contains precipitation estimate using gauge calibration over land;
 \item \code{precipitationUncal}: snapshot precipitation – uncalibrated (mm/hr);
 \item \code{probabilityLiquidPrecipitation}: probability of liquid precipitation phase.
 }

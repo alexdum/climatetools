@@ -22,7 +22,8 @@
 #' source sensor identifier (index values);
 #' \item \code{IRkalmanFilterWeight}: Kalman filter weight for IR (percent);
 #' \item \code{IRprecipitation}: (mm/hr);
-#' \item \code{precipitationCal}: snapshot precipitation – calibrated (mm/hr);
+#' \item \code{precipitationCal}: snapshot precipitation – calibrated (mm/hr),
+#' contains precipitation estimate using gauge calibration over land;
 #' \item \code{precipitationUncal}: snapshot precipitation – uncalibrated (mm/hr);
 #' \item \code{probabilityLiquidPrecipitation}: probability of liquid precipitation phase.
 #' }

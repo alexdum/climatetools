@@ -14,4 +14,4 @@ BugReports: http://github.com/alexdum/climatetools/issues
 Imports:
     raster,
     h5
-RoxygenNote: 5.0.0
+RoxygenNote: 5.0.1

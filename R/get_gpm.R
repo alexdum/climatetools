@@ -18,7 +18,9 @@ get_gpm<-function (product,begin=NULL,end=NULL)
   if (is.null(end)) {
     stop("No end date provided")
   }
-
+  # pentru help
+  # http://pmm.nasa.gov/data-access/downloads/gpm
+  # ftp://jsimpson.pps.eosdis.nasa.gov/NRTPUB/imerg/gis/README.GIS.pdf
   if(product=="monthly") {
 
 

@@ -1,4 +1,4 @@
-#' Read GMP data to raster file
+#' Read GMP (IMERG) data to raster file
 #' @param file a character string naming a H5 file.
 #' @param dataset to be read from H5 file; see details.
 #' @param extent of the gridfile to be read in R, a vector of a length 4;

@@ -22,7 +22,7 @@ sinteze_lipsuri<-function(path,missing)
   lipsuri[is.na(lipsuri)]<-0
   norm<-norm[lipsuri[,15]<= missing,]
   #numele coloanelor
-  names(norm)<-c("CODGE","NUME","Jan","Feb","Mar","Apr","Mai","Jun","Jul",
+  names(norm)<-c("CODGE","NUME","Jan","Feb","Mar","Apr","May","Jun","Jul",
                  "Aug","Sep","Oct","Nov","Dec")
 
   return(norm[,1:14])

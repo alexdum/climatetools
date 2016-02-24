@@ -12,6 +12,5 @@ License: GPL (>= 2)
 URL: http://github.com/alexdum/climatetools
 BugReports: http://github.com/alexdum/climatetools/issues
 Imports:
-    raster,
-    h5
+    raster
 RoxygenNote: 5.0.1

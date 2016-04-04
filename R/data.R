@@ -2,7 +2,7 @@
 #'
 #' Metadata of  meteorological stations from Romania.
 #'
-#' @format A data frame with 163 rows and 14 variables:
+#' @format A data frame with 164 rows and 14 variables:
 #' \itemize{
 #'   \item CMR:     Regional Meteorological Center
 #'   \item JU:      County

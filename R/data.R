@@ -16,7 +16,7 @@
 #'   \item SURSA_Z: Source of altitude
 #'   \item Lon:     Longitude in degrees (WGS84; EPSG:4326)
 #'   \item Lat:     Latitude in degrees (WGS84; EPSG:4326)
-#'   \itme Rugozitate: roughness as extracted from CORINE Land Cover (CLC) 2006
+#'   \item Rugozitate: roughness as extracted from CORINE Land Cover (CLC) 2006
 #' }
 #'
 #' @source METEO ROMANIA \url{http://www.meteoromania.ro/}

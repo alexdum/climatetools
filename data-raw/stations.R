@@ -26,11 +26,10 @@ ws$Rugozitate <- ex
 
 # adauga Cau --------------------------------------------------------------
 cau <- read.csv("data-raw/cau.csv")
+names(cau)[5:7] <- c("Cau_0_20","Cau_0_50","Cau_0_100")
 
-m.ws <- merge(ws,cau, by.x = "CODST", by.y = "co", all.x = T)
-ws$Cau_0_20 <- m.ws$cau_0_20
-ws$Cau_0_50 <- m.ws$cau_0_50
-ws$Cau_0_100 <- m.ws$cau_0_100
+ws <- merge(ws,cau[,c("co","Cau_0_20","Cau_0_50","Cau_0_100")], by.x = "CODST", by.y = "co", all.x = T)
+
 
 
 devtools::use_data(ws, overwrite = TRUE)

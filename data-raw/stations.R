@@ -21,8 +21,17 @@ rug <- raster("data-raw/rugozitate.tif")
 rug[rug<0] <- NA
 sp <- SpatialPoints(cbind(ws$X, ws$Y))
 ex <- round(extract(rug, sp),3)
-
 ws$Rugozitate <- ex
+
+
+# adauga Cau --------------------------------------------------------------
+cau <- read.csv("data-raw/cau.csv")
+
+m.ws <- merge(ws,cau, by.x = "CODST", by.y = "co", all.x = T)
+ws$Cau_0_20 <- m.ws$cau_0_20
+ws$Cau_0_50 <- m.ws$cau_0_50
+ws$Cau_0_100 <- m.ws$cau_0_100
+
 
 devtools::use_data(ws, overwrite = TRUE)
 

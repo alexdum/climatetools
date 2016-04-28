@@ -19,6 +19,9 @@
   \item Lon:     Longitude in degrees (WGS84; EPSG:4326)
   \item Lat:     Latitude in degrees (WGS84; EPSG:4326)
   \item Rugozitate: roughness as extracted from CORINE Land Cover (CLC) 2006
+  \item Cau_0_20: Capacitatea de aap utila a solului (m3/ha) 0-20 cm
+  \item Cau_0_50: Capacitatea de aap utila a solului (m3/ha) 0-50 cm
+  \item Cau_0_100: Capacitatea de aap utila a solului (m3/ha) 0-100 cm
 }}
 \source{
 METEO ROMANIA \url{http://www.meteoromania.ro/}

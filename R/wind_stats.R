@@ -22,9 +22,7 @@
 
 
 wind_stats <- function(x, rho = 1.225) {
-  # alegel valorile mai mari de 0
-  x <- x[x>0]
-  x <- na.omit(x)
+
   # The Weibull parameters
   k <- (sd(x)/mean(x))^(-1.086)
   A <- mean(x)/(gamma(1+1/k))

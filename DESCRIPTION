@@ -11,6 +11,5 @@ Description: More about what it does (maybe more than one line)
 License: GPL (>= 2)
 URL: http://github.com/alexdum/climatetools
 BugReports: http://github.com/alexdum/climatetools/issues
-Imports:
-    raster
+Imports: raster, MASS
 RoxygenNote: 5.0.1

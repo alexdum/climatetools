@@ -1,8 +1,8 @@
 #' Weather stations METEOROMANIA.
 #'
-#' Metadata of  meteorological stations from Romania.
+#' Metadata of  meteorological stations and rain gauges from Romania.
 #'
-#' @format A data frame with 164 rows and 14 variables:
+#' @format A data frame with 206 rows and 14 variables:
 #' \itemize{
 #'   \item CMR:     Regional Meteorological Center
 #'   \item JU:      County

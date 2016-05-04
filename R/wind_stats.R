@@ -22,7 +22,9 @@
 
 
 wind_stats <- function(x, rho = 1.225) {
-
+  # alegel valorile mai mari de 0
+  x <- x[x>0]
+  x <- na.omit(x)
   # The option "lower = 0" is added because the parameters of the Weibull
   # distribution need to be >= 0
   fit_w <- MASS::fitdistr(x, densfun="weibull", lower = 0)

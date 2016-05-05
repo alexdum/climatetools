@@ -24,8 +24,8 @@
 wind_stats <- function(x, rho = 1.225) {
 
   # The Weibull parameters
-  k <- (sd(x)/mean(x))^(-1.086)
-  A <- mean(x)/(gamma(1+1/k))
+  k <- (sd(x, na.rm = T)/mean(x, na.rm = T))^(-1.086)
+  A <- mean(x, na.rm = T)/(gamma(1+1/k))
 
   # power density
   E <- 1/2 * rho * A^3* gamma(1+3/k)

@@ -9,6 +9,7 @@
 #'@return Wind speed values computed at certain height (Z)
 #'@references http://www.fao.org/docrep/X0490E/x0490e08.htm;
 #'http://www.fao.org/docrep/X0490E/x0490e06.htm
+#'@export
 wind_log <- function (Vref, Zref, Z0, Z) {
 
   u_z0 <- Vref*(log(Z/Z0)/log(Zref/Z0))

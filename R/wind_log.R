@@ -1,7 +1,7 @@
 #'Extrapolate the wind speed at a certain height by using the log law
-#'@description This calculator extrapolates the wind speed at a certain height
-#'by using the log law. The increase or decrease of wind speed with height can
-#'be computed by this logarithmic expression.
+#'@description This function extrapolates the wind speed at a certain height
+#'by using the log law. The increase or decrease of wind speed as a function of
+#'height above ground can be computed by this logarithmic expression.
 #'@param Vref known velocity at height Zref
 #'@param Zref reference height where Vref is known
 #'@param Z0 roughness length in the current wind direction

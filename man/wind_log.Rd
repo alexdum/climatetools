@@ -9,13 +9,20 @@ wind_log(Vref, Zref, Z0, Z)
 \arguments{
 \item{Vref}{known velocity at height Zref}
 
-\item{Zref}{reference height where vref is known}
+\item{Zref}{reference height where Vref is known}
 
 \item{Z0}{roughness length in the current wind direction}
 
 \item{Z}{height above ground level for velocity to be calculated}
 }
+\value{
+Wind speed values computed at certain height (Z)
+}
 \description{
 Extrapolate the wind speed at a certain height by using the log law
+}
+\references{
+http://www.fao.org/docrep/X0490E/x0490e08.htm;
+http://www.fao.org/docrep/X0490E/x0490e06.htm
 }
 

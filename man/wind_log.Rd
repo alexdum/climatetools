@@ -19,7 +19,9 @@ wind_log(Vref, Zref, Z0, Z)
 Wind speed values computed at certain height (Z)
 }
 \description{
-Extrapolate the wind speed at a certain height by using the log law
+This calculator extrapolates the wind speed at a certain height
+by using the log law. The increase or decrease of wind speed with height can
+be computed by this logarithmic expression.
 }
 \references{
 http://www.fao.org/docrep/X0490E/x0490e08.htm;

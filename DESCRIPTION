@@ -1,6 +1,6 @@
 Package: climatetools
 Type: Package
-Title: Tools and data for weather and climate analysis.
+Title: Tools and data for weather and climate analysis
 Version: 0.1-02
 Date: 2015-10-01
 Depends:

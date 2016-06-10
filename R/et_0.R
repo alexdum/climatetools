@@ -21,7 +21,9 @@
 #'plot(buc_baneasa$Date, et, type="l")
 #'plot(buc_baneasa$Date, buc_baneasa$Sd, type="l")
 
-
+#'@importFrom sp CRS
+#'@importFrom sp SpatialPoints
+#'@importFrom  maptools sunriset
 #'@export
 
 et_0 <- function(Lon, Lat, Dates, Tavg, Rh, Sd, Ws) {
@@ -32,12 +34,12 @@ et_0 <- function(Lon, Lat, Dates, Tavg, Rh, Sd, Ws) {
   # Dates=as.Date(dd$Date)
   # convert coordinate to Spatial Points
   hels <- matrix(c(Lon, Lat), nrow=1)
-  Hels <- sp::SpatialPoints(hels, proj4string=sp::CRS("+proj=longlat +datum=WGS84"))
+  Hels <- SpatialPoints(hels, proj4string = CRS("+proj=longlat +datum=WGS84"))
 
 
   # compute dy length
-  up <- maptools::sunriset(Hels, as.POSIXct(Dates, tz = "EET"), direction="sunrise", POSIXct.out=TRUE)
-  down <- maptools::sunriset(Hels, as.POSIXct(Dates, tz = "EET"), direction="sunset", POSIXct.out=TRUE)
+  up <- sunriset(Hels, as.POSIXct(Dates, tz = "EET"), direction="sunrise", POSIXct.out=TRUE)
+  down <- sunriset(Hels, as.POSIXct(Dates, tz = "EET"), direction="sunset", POSIXct.out=TRUE)
   dl <- as.numeric(down$time - up$time)
 
 

@@ -1,7 +1,7 @@
 Package: climatetools
 Type: Package
 Title: Tools and data for weather and climate analysis
-Version: 0.1-02
+Version: 0.1-99
 Date: 2015-10-01
 Depends:
     R (>= 3.1.0)
@@ -11,6 +11,8 @@ Description: More about what it does (maybe more than one line)
 License: GPL (>= 2)
 URL: http://github.com/alexdum/climatetools
 BugReports: http://github.com/alexdum/climatetools/issues
-Imports: raster, maptools, sp
+Imports:
+  maptools,
+  sp
 RoxygenNote: 5.0.1
 LazyData: true

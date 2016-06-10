@@ -13,3 +13,4 @@ URL: http://github.com/alexdum/climatetools
 BugReports: http://github.com/alexdum/climatetools/issues
 Imports: raster, maptools, sp
 RoxygenNote: 5.0.1
+LazyData: true

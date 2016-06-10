@@ -34,3 +34,30 @@
 #' @usage data(ws)
 "ws"
 
+
+#'Bucharest Baneasa daily climate data
+#'
+#' Daily climate data measured in 2015 at Bucuresti Baneasa weather station.
+#'
+#' @format A data frame with 365 rows and 9 variables:
+#' \itemize{
+#'   \item CODGE:    geographical ID
+#'   \item Date:     date field
+#'   \item Precip:   sums of precipitation  (mm)
+#'   \item Tavg:     mean temperature (°C)
+#'   \item Tmax:     maximum temperature (°C)
+#'   \item Ws:       mean wind speed (°m/s)
+#'   \item Rh:       relative humidity (%)
+#' }
+#'
+#' @source METEO ROMANIA \url{http://www.meteoromania.ro/}
+#'
+#' @examples
+#' data(buc_baneasa)
+#' str(buc_baneasa)
+#' hist(buc_baneasa$Precip)
+#'
+#'
+#'
+#' @usage data(buc_baneasa)
+"buc_baneasa"

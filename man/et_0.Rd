@@ -15,11 +15,11 @@ et_0(Lon, Lat, Dates, Tavg, Rh, Sd, Ws)
 
 \item{Tavg}{daily mean temperature (°C)}
 
-\item{Rh}{daily mean relative humidity (%)}
+\item{Rh}{daily mean relative humidity (\%)}
 
 \item{Sd}{daily sunshine duration (hours)}
 
-\item{Ws}{daily wind speed (m/s)}
+\item{Ws}{daily wind speed (m/s) at 2m above ground level}
 }
 \description{
 The panel of experts recommended  in May 1990 the adoption of the

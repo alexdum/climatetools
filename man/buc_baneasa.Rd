@@ -12,7 +12,7 @@
   \item Tavg:     mean temperature (°C)
   \item Tmax:     maximum temperature (°C)
   \item Ws:       mean wind speed (°m/s)
-  \item Rh:       relative humidity (%)
+  \item Rh:       relative humidity (\%)
 }}
 \source{
 METEO ROMANIA \url{http://www.meteoromania.ro/}

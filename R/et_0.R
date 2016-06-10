@@ -11,6 +11,17 @@
 #'@param Sd daily sunshine duration (hours)
 #'@param Ws daily wind speed (m/s) at 2m above ground level
 #'@references http://www.fao.org/docrep/X0490E/x0490e08.htm
+#'@examples
+#'data(buc_baneasa)
+#' # convert wind speed form 10 magl to 2 magl
+#' ws2m <- wind_log(buc_baneasa$Ws,10, 0.1, 2)
+#' # compute ET0
+#' et <- et_0(Lon = 26.07969, Lat = 44.51072, Dates = as.Date(buc_baneasa$Date),
+#'           Tavg = buc_baneasa$Tavg, Rh = buc_baneasa$Rh, Sd = buc_baneasa$Sd, Ws = buc_baneasa$Ws)
+#'plot(buc_baneasa$Date, et, type="l")
+#'plot(buc_baneasa$Date, buc_baneasa$Sd, type="l")
+
+
 #'@export
 
 et_0 <- function(Lon, Lat, Dates, Tavg, Rh, Sd, Ws) {

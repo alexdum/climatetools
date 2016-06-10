@@ -27,6 +27,16 @@ FAO Penman-Monteith  combination method as a new standard for reference
 evapotranspiration and  advised on procedures for calculation of the various
  parameters (http://www.fao.org/docrep/X0490E/x0490e06.htm)
 }
+\examples{
+data(buc_baneasa)
+# convert wind speed form 10 magl to 2 magl
+ws2m <- wind_log(buc_baneasa$Ws,10, 0.1, 2)
+# compute ET0
+et <- et_0(Lon = 26.07969, Lat = 44.51072, Dates = as.Date(buc_baneasa$Date),
+          Tavg = buc_baneasa$Tavg, Rh = buc_baneasa$Rh, Sd = buc_baneasa$Sd, Ws = buc_baneasa$Ws)
+plot(buc_baneasa$Date, et, type="l")
+plot(buc_baneasa$Date, buc_baneasa$Sd, type="l")
+}
 \references{
 http://www.fao.org/docrep/X0490E/x0490e08.htm
 }

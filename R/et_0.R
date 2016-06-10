@@ -21,8 +21,7 @@
 #'plot(buc_baneasa$Date, et, type="l")
 #'plot(buc_baneasa$Date, buc_baneasa$Sd, type="l")
 
-#'@importFrom sp CRS
-#'@importFrom sp SpatialPoints
+#'@importFrom sp CRS SpatialPoints
 #'@importFrom  maptools sunriset
 #'@export
 

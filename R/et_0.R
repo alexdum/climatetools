@@ -1,39 +1,43 @@
-et_0 <- function() {
-  #tab<-read.csv("misc/tabele/Baneasa_PM_1961_2010_z.csv",stringsAsFactors=F)
+#' The FAO Penman-Monteith crop reference evapotranspiration
+#' @description The panel of experts recommended  in May 1990 the adoption of the
+#' FAO Penman-Monteith  combination method as a new standard for reference
+#' evapotranspiration and  advised on procedures for calculation of the various
+#'  parameters (http://www.fao.org/docrep/X0490E/x0490e06.htm)
+#'  @param Lon longitude in degrees (WGS84; EPSG:4326)
+#'  @param Lat latitude in degrees (WGS84; EPSG:4326)
+#'  @param Dates date field reprezenting days of measurements
+#'  @param Tavg daily mean temperature (°C)
+#'  @param Rh daily mean relative humidity (%)
+#'  @param Sd daily sunshine duration (hours)
+#'  @param Ws daily wind speed (m/s)
+#'  @references http://www.fao.org/docrep/X0490E/x0490e08.htm
+#'@export
+#' @export
+et_0 <- function(Lon, Lat, Dates, Tavg, Rh, Sd, Ws) {
 
-
-  hels <- matrix(c(st$Lon,st$Lat), nrow=1)
+  # convert coordinate to Spatial Points
+  hels <- matrix(c(Lon, Lat), nrow=1)
   Hels <- SpatialPoints(hels, proj4string=CRS("+init=epsg:3844"))
   Hels<-spTransform(Hels,CRS("+init=epsg:4326"))
 
-  # calculeaza dai length
+  # compute dy length
   up <- sunriset(Hels, tt$DAT,direction="sunrise", POSIXct.out=TRUE)
   down <- sunriset(Hels, tt$DAT, direction="sunset", POSIXct.out=TRUE)
   dl <- as.numeric(down$time - up$time)
 
 
-
-  rug<-st$Rugozitate
-  VMED2m<-tt$VMED*(log(2/rug)/log(10/rug))
-
-  t<- tt$TMED
-  ur<-tt$UMRELM
-  ds<-tt$DURS
-  ws<-VMED2m
-  #ws<-tt$VMED
-
-  # extrage julina day si latitudinea
-  J<-as.integer(format(tt$DAT,"%j"))
+  # extract Julian dai and latitude
+  J <- as.integer(format(tt$DAT,"%j"))
   lat<-Hels@coords[2]
 
 
 
-  #pas 1 calculate vapour presure deficit
-  #saturated vapour presure
+  # pas 1 calculate vapour presure deficit
+  # saturated vapour presure
   pm<-6.11*10^((7.5*t)/(237.7+t))
   phg<-pm*0.0295300
 
-  #kpa saturated vapour presure
+  # kpa saturated vapour presure
   ea<-33.8639*(phg/10)
 
   #actual vapour presure
@@ -41,7 +45,6 @@ et_0 <- function() {
   ead<-ea-ed
 
   #pas 2 Calculate available energy
-
   alpha<-(3.14/180)*(lat)
   dr <- 1 + 0.033*cos(2*3.14*(J)/365)
   beta<-0.409*sin(2*3.14*(J)/365 - 1.39)
@@ -60,7 +63,8 @@ et_0 <- function() {
 
   slope<- 4098*ea/(t+237.3)^2
 
-  # pas 4
+  # pas 4 final
 
-  tt$ETP_R<-(0.408*slope*RnG)/(slope+0.066*(1+0.34*ws))+(0.066*(900/(t+273)*ws*ead))/(slope+0.066*(1+0.34*ws))
+  et<-(0.408*slope*RnG)/(slope+0.066*(1+0.34*ws))+(0.066*(900/(t+273)*ws*ead))/(slope+0.066*(1+0.34*ws))
+  return(et)
 }

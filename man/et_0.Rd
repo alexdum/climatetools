@@ -13,7 +13,7 @@ et_0(Lon, Lat, Dates, Tavg, Rh, Sd, Ws)
 
 \item{Dates}{date field reprezenting days of measurements}
 
-\item{Tavg}{daily mean temperature (°C)}
+\item{Tavg}{daily mean temperature (ºC)}
 
 \item{Rh}{daily mean relative humidity (\%)}
 

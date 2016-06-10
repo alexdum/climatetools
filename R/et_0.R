@@ -6,7 +6,7 @@
 #'@param Lon longitude in degrees (WGS84; EPSG:4326)
 #'@param Lat latitude in degrees (WGS84; EPSG:4326)
 #'@param Dates date field reprezenting days of measurements
-#'@param Tavg daily mean temperature (°C)
+#'@param Tavg daily mean temperature (ºC)
 #'@param Rh daily mean relative humidity (\%)
 #'@param Sd daily sunshine duration (hours)
 #'@param Ws daily wind speed (m/s) at 2m above ground level
@@ -17,12 +17,12 @@ et_0 <- function(Lon, Lat, Dates, Tavg, Rh, Sd, Ws) {
 
   # convert coordinate to Spatial Points
   hels <- matrix(c(Lon, Lat), nrow=1)
-  Hels <- SpatialPoints(hels, proj4string=CRS("+init=epsg:3844"))
-  Hels<-spTransform(Hels,CRS("+init=epsg:4326"))
+  Hels <- sp::SpatialPoints(hels, proj4string=sp::CRS("+proj=longlat +datum=WGS84"))
+
 
   # compute dy length
-  up <- sunriset(Hels, tt$DAT,direction="sunrise", POSIXct.out=TRUE)
-  down <- sunriset(Hels, tt$DAT, direction="sunset", POSIXct.out=TRUE)
+  up <- maptools::sunriset(Hels, Dates, direction="sunrise", POSIXct.out=TRUE)
+  down <- maptools::sunriset(Hels, Dates, direction="sunset", POSIXct.out=TRUE)
   dl <- as.numeric(down$time - up$time)
 
 

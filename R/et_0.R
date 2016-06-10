@@ -3,16 +3,16 @@
 #' FAO Penman-Monteith  combination method as a new standard for reference
 #' evapotranspiration and  advised on procedures for calculation of the various
 #'  parameters (http://www.fao.org/docrep/X0490E/x0490e06.htm)
-#'  @param Lon longitude in degrees (WGS84; EPSG:4326)
-#'  @param Lat latitude in degrees (WGS84; EPSG:4326)
-#'  @param Dates date field reprezenting days of measurements
-#'  @param Tavg daily mean temperature (°C)
-#'  @param Rh daily mean relative humidity (%)
-#'  @param Sd daily sunshine duration (hours)
-#'  @param Ws daily wind speed (m/s)
-#'  @references http://www.fao.org/docrep/X0490E/x0490e08.htm
+#'@param Lon longitude in degrees (WGS84; EPSG:4326)
+#'@param Lat latitude in degrees (WGS84; EPSG:4326)
+#'@param Dates date field reprezenting days of measurements
+#'@param Tavg daily mean temperature (°C)
+#'@param Rh daily mean relative humidity (%)
+#'@param Sd daily sunshine duration (hours)
+#'@param Ws daily wind speed (m/s)
+#'@references http://www.fao.org/docrep/X0490E/x0490e08.htm
 #'@export
-#' @export
+
 et_0 <- function(Lon, Lat, Dates, Tavg, Rh, Sd, Ws) {
 
   # convert coordinate to Spatial Points

@@ -7,9 +7,9 @@
 #'@param Lat latitude in degrees (WGS84; EPSG:4326)
 #'@param Dates date field reprezenting days of measurements
 #'@param Tavg daily mean temperature (°C)
-#'@param Rh daily mean relative humidity (%)
+#'@param Rh daily mean relative humidity (\%)
 #'@param Sd daily sunshine duration (hours)
-#'@param Ws daily wind speed (m/s)
+#'@param Ws daily wind speed (m/s) at 2m above ground level
 #'@references http://www.fao.org/docrep/X0490E/x0490e08.htm
 #'@export
 
@@ -27,10 +27,13 @@ et_0 <- function(Lon, Lat, Dates, Tavg, Rh, Sd, Ws) {
 
 
   # extract Julian dai and latitude
-  J <- as.integer(format(tt$DAT,"%j"))
+  J <- as.integer(format(Dates,"%j"))
   lat<-Hels@coords[2]
 
-
+  t<- Tavg
+  ur <- Rh
+  ds <- Sd
+  ws <- Ws
 
   # pas 1 calculate vapour presure deficit
   # saturated vapour presure

@@ -13,6 +13,7 @@
 #' # Citeste normalele de temperatura cu 5% lipsuri
 #' temp5 <- sinteze_lipsuri(system.file("extdata/tt_1981_2000.csv",
 #' package = "climatetools"),5)
+#' @importFrom utils read.table
 #' @export
 
 sinteze_lipsuri<-function(path,missing)

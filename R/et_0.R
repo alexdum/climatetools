@@ -17,7 +17,7 @@
 #' ws2m <- wind_log(buc_baneasa$Ws,10, 0.1, 2)
 #' # compute ET0
 #' et <- et_0(Lon = 26.07969, Lat = 44.51072, Dates = as.Date(buc_baneasa$Date),
-#'           Tavg = buc_baneasa$Tavg, Rh = buc_baneasa$Rh, Sd = buc_baneasa$Sd, Ws = buc_baneasa$Ws)
+#'           Tavg = buc_baneasa$Tavg, Rh = buc_baneasa$Rh, Sd = buc_baneasa$Sd, Ws = ws2m)
 #'plot(buc_baneasa$Date, et, type="l")
 #'plot(buc_baneasa$Date, buc_baneasa$Sd, type="l")
 

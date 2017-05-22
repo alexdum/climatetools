@@ -33,4 +33,3 @@ package = "climatetools"),5)
 \author{
 Alexandru Dumitrescu
 }
-

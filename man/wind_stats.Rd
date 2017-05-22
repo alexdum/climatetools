@@ -35,4 +35,3 @@ shape parameter k. The Weibull characteristics calculated are (Troen and Peterse
 \item wind power density:
 }
 }
-

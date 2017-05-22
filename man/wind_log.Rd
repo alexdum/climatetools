@@ -27,4 +27,3 @@ height above ground can be computed by this logarithmic expression.
 http://www.fao.org/docrep/X0490E/x0490e08.htm;
 http://www.fao.org/docrep/X0490E/x0490e06.htm
 }
-

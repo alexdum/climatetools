@@ -4,7 +4,7 @@
 \alias{et_0}
 \title{The FAO Penman-Monteith crop reference evapotranspiration}
 \usage{
-et_0(Lon, Lat, Dates, Tavg, Rh, Sd, Ws)
+et_0(Lon, Lat, Dates, Tavg, Rh, Sd = NA, Rs = NA, Ws)
 }
 \arguments{
 \item{Lon}{longitude in degrees (WGS84; EPSG:4326)}
@@ -18,6 +18,8 @@ et_0(Lon, Lat, Dates, Tavg, Rh, Sd, Ws)
 \item{Rh}{daily mean relative humidity (\%)}
 
 \item{Sd}{daily sunshine duration (hours)}
+
+\item{Rs}{daily sunshine duration (MJ m-2 day-1)}
 
 \item{Ws}{daily wind speed (m/s) at 2m above ground level}
 }
@@ -40,4 +42,3 @@ plot(buc_baneasa$Date, buc_baneasa$Sd, type="l")
 \references{
 http://www.fao.org/docrep/X0490E/x0490e08.htm
 }
-

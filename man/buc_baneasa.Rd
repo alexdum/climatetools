@@ -32,4 +32,3 @@ hist(buc_baneasa$Precip)
 
 }
 \keyword{datasets}
-

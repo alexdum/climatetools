@@ -9,6 +9,7 @@
 #'@param Tavg daily mean temperature (ºC)
 #'@param Rh daily mean relative humidity (\%)
 #'@param Sd daily sunshine duration (hours)
+#'@param Rs daily sunshine duration (MJ m-2 day-1)
 #'@param Ws daily wind speed (m/s) at 2m above ground level
 #'@references http://www.fao.org/docrep/X0490E/x0490e08.htm
 #'@examples
@@ -25,7 +26,7 @@
 #'@importFrom  maptools sunriset
 #'@export
 
-et_0 <- function(Lon, Lat, Dates, Tavg, Rh, Sd, Ws) {
+et_0 <- function(Lon, Lat, Dates, Tavg, Rh, Sd = NA, Rs = NA, Ws) {
 
   # dd <- read.csv("data-raw/bucharest_baneasa.csv")
   # Lon = 26.07969
@@ -74,9 +75,17 @@ et_0 <- function(Lon, Lat, Dates, Tavg, Rh, Sd, Ws) {
 
   Rns=0.77*(0.25+0.5*ds/dl)*Ra
   Rnl=2.45*10^-9*(0.9*ds/dl+0.1)*(0.34-0.14*sqrt(ed))*2*(273+t)^4
-  RnG=Rns-Rnl-0
 
-  #pas 3 calculate other values required
+  # calculeaza in functie daca ai radiatie globala sau stralucire Soare
+  if (!is.null(Rs) & is.null(Sd)) {
+    RnG = Rs - Rnl - 0
+  } else {
+    RnG = Rns - Rnl - 0
+  }
+
+
+
+  # pas 3 calculate other values required
 
   # slope of saturated vapour pessure curve
 

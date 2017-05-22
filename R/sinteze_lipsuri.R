@@ -11,7 +11,7 @@
 #' mai putin de nr lipsuri definit in missing
 #' @examples
 #' # Citeste normalele de temperatura cu 5% lipsuri
-#' temp5 <- sinteze_lipsuri(system.file("extdata/tt_1981_2000.csv",
+#' temp5 <- sinteze_lipsuri(system.file("extdata/tt_1981_2010.csv",
 #' package = "climatetools"),5)
 #' @importFrom utils read.table
 #' @export

@@ -96,3 +96,6 @@ et_0 <- function(Lon, Lat, Dates, Tavg, Rh, Sd = NA, Rs = NA, Ws) {
   et<-(0.408*slope*RnG)/(slope+0.066*(1+0.34*ws))+(0.066*(900/(t+273)*ws*ead))/(slope+0.066*(1+0.34*ws))
   return(et)
 }
+
+
+et_0 <- Vectorize(et_0)

@@ -33,29 +33,29 @@ et_0 <- function(Lon, Lat, Dates, Tavg, Rh, Sd = NA, Rs = NA, Ws) {
   # Lat = 44.51072
   # Dates=as.Date(dd$Date)
   # convert coordinate to Spatial Points
-  hels <- matrix(c(Lon, Lat), nrow=1)
+  hels <- matrix(c(Lon, Lat), nrow = 1)
   Hels <- SpatialPoints(hels, proj4string = CRS("+proj=longlat +datum=WGS84"))
 
 
   # compute dy length
-  up <- sunriset(Hels, as.POSIXct(Dates, tz = "EET"), direction="sunrise", POSIXct.out=TRUE)
-  down <- sunriset(Hels, as.POSIXct(Dates, tz = "EET"), direction="sunset", POSIXct.out=TRUE)
+  up <- sunriset(Hels, as.POSIXct(Dates, tz = "EET"), direction = "sunrise", POSIXct.out = TRUE)
+  down <- sunriset(Hels, as.POSIXct(Dates, tz = "EET"), direction = "sunset", POSIXct.out = TRUE)
   dl <- as.numeric(down$time - up$time)
 
 
   # extract Julian dai and latitude
   J <- as.integer(format(Dates,"%j"))
-  lat<-Hels@coords[2]
+  lat <- Hels@coords[2]
 
-  t<- Tavg
+  t <- Tavg
   ur <- Rh
-  ds <- Sd
+  if (!is.na(Sd)) ds <- Sd
   ws <- Ws
 
   # pas 1 calculate vapour presure deficit
   # saturated vapour presure
-  pm<-6.11*10^((7.5*t)/(237.7+t))
-  phg<-pm*0.0295300
+  pm <- 6.11*10^((7.5*t)/(237.7 + t))
+  phg <- pm*0.0295300
 
   # kpa saturated vapour presure
   ea<-33.8639*(phg/10)

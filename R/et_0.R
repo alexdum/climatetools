@@ -77,7 +77,7 @@ et_0 <- function(Lon, Lat, Dates, Tavg, Rh, Sd = NA, Rs = NA, Ws) {
   Rnl=2.45*10^-9*(0.9*ds/dl+0.1)*(0.34-0.14*sqrt(ed))*2*(273+t)^4
 
   # calculeaza in functie daca ai radiatie globala sau stralucire Soare
-  if (!is.null(Rs) & is.null(Sd)) {
+  if (!is.na(Rs) & is.na(Sd)) {
     RnG = Rs - Rnl - 0
   } else {
     RnG = Rns - Rnl - 0

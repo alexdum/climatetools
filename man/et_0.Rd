@@ -4,13 +4,15 @@
 \alias{et_0}
 \title{The FAO Penman-Monteith crop reference evapotranspiration}
 \usage{
-et_0(Alt, Lat, Dates, Tmax, Tmin, Rh = NA, RHmax, RHmin, Sd = NA, Rs = NA,
-  Ws)
+et_0(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax, RHmin,
+  Sd = NA, Rs = NA, Ws)
 }
 \arguments{
 \item{Lat}{latitude in degrees (WGS84; EPSG:4326)}
 
 \item{Dates}{date field reprezenting days of measurements}
+
+\item{Tavg}{daily mean temperature (ºC)}
 
 \item{Tmax}{daily maximum temperature (ºC)}
 

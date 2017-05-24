@@ -6,6 +6,7 @@
 #'@param Lon longitude in degrees (WGS84; EPSG:4326)
 #'@param Lat latitude in degrees (WGS84; EPSG:4326)
 #'@param Dates date field reprezenting days of measurements
+#'@param Tavg daily mean temperature (ºC)
 #'@param Tmax daily maximum temperature (ºC)
 #'@param Tmin daily minimum temperature (ºC)
 #'@param Rh daily mean relative humidity (\%)
@@ -17,7 +18,7 @@
 #'@references http://www.fao.org/docrep/X0490E/x0490e08.htm
 #'@export
 
-et_0 <- function(Alt, Lat, Dates, Tmax, Tmin, Rh = NA, RHmax, RHmin, Sd = NA, Rs = NA, Ws) {
+et_0 <- function(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax, RHmin, Sd = NA, Rs = NA, Ws) {
 
   # dd <- read.csv("data-raw/bucharest_baneasa.csv")
   # Lon = 4.3517
@@ -38,7 +39,11 @@ et_0 <- function(Alt, Lat, Dates, Tmax, Tmin, Rh = NA, RHmax, RHmin, Sd = NA, Rs
   J <- as.integer(format(Dates,"%j"))
   lat <- Lat
 
-  tt <- Tavg
+  if (!is.na(Tavg)) {
+    tt <- Tavg
+  } else {
+    tt <- (Tmax + Tmin)/2
+  }
   if (!is.na(Rh)) rh <- Rh
   if (!is.na(Sd)) ds <- Sd
   if (!is.na(Rs)) rs <- Rs

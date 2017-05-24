@@ -103,7 +103,7 @@ et_0 <- function(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax, RHmin, 
 
   # sloar radiation from sunshine duration
   # daylight hours (N)
-  if (is.na(Sd[1])) {
+  if (!is.na(Sd[1])) {
   n <- 24/pi*wsh
   rs <- (0.25 + 0.50*(ds/n))*ra
   }

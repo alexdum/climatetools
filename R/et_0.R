@@ -15,18 +15,6 @@
 #'@param Rs daily sunshine duration (MJ m-2 day-1)
 #'@param Ws daily wind speed (m/s) at 2m above ground level
 #'@references http://www.fao.org/docrep/X0490E/x0490e08.htm
-#'@examples
-#'data(buc_baneasa)
-#' # convert wind speed form 10 magl to 2 magl
-#' ws2m <- wind_log(buc_baneasa$Ws,10, 0.1, 2)
-#' # compute ET0
-#' et <- et_0(Lon = 26.07969, Lat = 44.51072, Dates = as.Date(buc_baneasa$Date),
-#'           Tavg = buc_baneasa$Tavg, Rh = buc_baneasa$Rh, Sd = buc_baneasa$Sd, Ws = ws2m)
-#'plot(buc_baneasa$Date, et, type="l")
-#'plot(buc_baneasa$Date, buc_baneasa$Sd, type="l")
-
-#'@importFrom sp CRS SpatialPoints
-#'@importFrom  maptools sunriset
 #'@export
 
 et_0 <- function(Alt, Lat, Dates, Tmax, Tmin, Rh = NA, RHmax, RHmin, Sd = NA, Rs = NA, Ws) {

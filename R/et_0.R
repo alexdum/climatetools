@@ -18,7 +18,7 @@
 #'@references http://www.fao.org/docrep/X0490E/x0490e08.htm
 #'@export
 
-et_0 <- function(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax, RHmin, Sd = NA, Rs = NA, Ws) {
+et_0 <- function(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax = NA, RHmin = NA, Sd = NA, Rs = NA, Ws) {
 
   # dd <- read.csv("data-raw/bucharest_baneasa.csv")
   # Lon = 4.3517

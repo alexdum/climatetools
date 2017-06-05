@@ -3,7 +3,6 @@
 #' FAO Penman-Monteith  combination method as a new standard for reference
 #' evapotranspiration and  advised on procedures for calculation of the various
 #'  parameters (http://www.fao.org/docrep/X0490E/x0490e06.htm)
-#'@param Lon longitude in degrees (WGS84; EPSG:4326)
 #'@param Lat latitude in degrees (WGS84; EPSG:4326)
 #'@param Dates date field reprezenting days of measurements
 #'@param Tavg daily mean temperature (ºC)

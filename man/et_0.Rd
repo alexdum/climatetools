@@ -4,8 +4,8 @@
 \alias{et_0}
 \title{The FAO Penman-Monteith crop reference evapotranspiration}
 \usage{
-et_0(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax, RHmin,
-  Sd = NA, Rs = NA, Ws)
+et_0(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax = NA,
+  RHmin = NA, Sd = NA, Rs = NA, Ws)
 }
 \arguments{
 \item{Lat}{latitude in degrees (WGS84; EPSG:4326)}
@@ -29,8 +29,6 @@ et_0(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax, RHmin,
 \item{Rs}{daily sunshine duration (MJ m-2 day-1)}
 
 \item{Ws}{daily wind speed (m/s) at 2m above ground level}
-
-\item{Lon}{longitude in degrees (WGS84; EPSG:4326)}
 }
 \description{
 The panel of experts recommended  in May 1990 the adoption of the

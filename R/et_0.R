@@ -79,8 +79,14 @@ et_0 <- function(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax, RHmin, 
   esmin <-  0.6108*exp(17.27*tmin/(tmin + 237.3))
   es <- (esmax + esmin)/2
 
-  # Actual vapor pressure (ea) derived from relative humidity kPa
-  ea <- (esmin*(RHmax/100) + esmax*(RHmin/100))/2
+
+  if (!is.na(Rh[1])) {
+    # In the absence of RHmax and RHmin:
+    ea <- Rh/100 * ((esmin + esmax)/2)
+  } else {
+    # Actual vapor pressure (ea) derived from relative humidity kPa
+    ea <- (esmin*(RHmax/100) + esmax*(RHmin/100))/2
+  }
 
   # Vapour pressure deficit
   ed <- es - ea
@@ -98,14 +104,14 @@ et_0 <- function(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax, RHmin, 
   # Step 15: Extraterrestrial radiation (Ra)
   ra <- (24*60)/pi*0.0820*dr*((wsh*sin(lat.rad)*sin(d)) + (cos(lat.rad)*cos(d)*sin(wsh)))
 
-   # Step 16: Clear sky solar radiation (Rso)
+  # Step 16: Clear sky solar radiation (Rso)
   rs0 <- (0.75 + 0.00002*Alt)*ra
 
   # sloar radiation from sunshine duration
   # daylight hours (N)
   if (!is.na(Sd[1])) {
-  n <- 24/pi*wsh
-  rs <- (0.25 + 0.50*(ds/n))*ra
+    n <- 24/pi*wsh
+    rs <- (0.25 + 0.50*(ds/n))*ra
   }
 
   # Step 17: Net solar or net shortwave radiation (Rns)

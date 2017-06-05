@@ -8,6 +8,8 @@ et_0(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax = NA,
   RHmin = NA, Sd = NA, Rs = NA, Ws)
 }
 \arguments{
+\item{Alt}{station altitude (m)}
+
 \item{Lat}{latitude in degrees (WGS84; EPSG:4326)}
 
 \item{Dates}{date field reprezenting days of measurements}
@@ -35,6 +37,14 @@ The panel of experts recommended  in May 1990 the adoption of the
 FAO Penman-Monteith  combination method as a new standard for reference
 evapotranspiration and  advised on procedures for calculation of the various
  parameters (http://www.fao.org/docrep/X0490E/x0490e06.htm)
+}
+\examples{
+data(buc_baneasa)
+# convert wind speed form 10 magl to 2 magl
+ws2m <- wind_log(buc_baneasa$Ws,10, 0.1, 2)
+# compute ET0
+et <- et_0( Alt = 90, Lat = 44.51072, Dates = as.Date(buc_baneasa$Date),Tmax = buc_baneasa$Tmax, Tmin = buc_baneasa$Tmax, Rh = buc_baneasa$Rh, Sd = buc_baneasa$Sd, Ws = ws2m)
+plot(buc_baneasa$Date, buc_baneasa$Sd, type = "l")
 }
 \references{
 http://www.fao.org/docrep/X0490E/x0490e08.htm

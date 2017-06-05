@@ -4,6 +4,7 @@
 #' evapotranspiration and  advised on procedures for calculation of the various
 #'  parameters (http://www.fao.org/docrep/X0490E/x0490e06.htm)
 #'@param Lat latitude in degrees (WGS84; EPSG:4326)
+#'@param Alt station altitude (m)
 #'@param Dates date field reprezenting days of measurements
 #'@param Tavg daily mean temperature (ºC)
 #'@param Tmax daily maximum temperature (ºC)
@@ -15,8 +16,15 @@
 #'@param Rs daily sunshine duration (MJ m-2 day-1)
 #'@param Ws daily wind speed (m/s) at 2m above ground level
 #'@references http://www.fao.org/docrep/X0490E/x0490e08.htm
-#'@export
+#'@examples
+#'data(buc_baneasa)
+#' # convert wind speed form 10 magl to 2 magl
+#'ws2m <- wind_log(buc_baneasa$Ws,10, 0.1, 2)
+#' # compute ET0
+#'et <- et_0( Alt = 90, Lat = 44.51072, Dates = as.Date(buc_baneasa$Date),Tmax = buc_baneasa$Tmax, Tmin = buc_baneasa$Tmax, Rh = buc_baneasa$Rh, Sd = buc_baneasa$Sd, Ws = ws2m)
+#'plot(buc_baneasa$Date, buc_baneasa$Sd, type = "l")
 
+#'@export
 et_0 <- function(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax = NA, RHmin = NA, Sd = NA, Rs = NA, Ws) {
 
   # dd <- read.csv("data-raw/bucharest_baneasa.csv")

@@ -13,7 +13,7 @@
 #'@param RHmax daily maximum relative humidity (\%)
 #'@param RHmin daily minimum relative humidity (\%)
 #'@param Sd daily sunshine duration (hours)
-#'@param Rs daily global solar radiation (MJ m-2 day-1)
+#'@param Rs daily total solar radiation (MJ m-2 day-1)
 #'@param Ws daily wind speed (m/s) at 2m above ground level
 #'@references http://www.fao.org/docrep/X0490E/x0490e08.htm
 #'@examples

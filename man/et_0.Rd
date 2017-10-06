@@ -28,7 +28,7 @@ et_0(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax = NA,
 
 \item{Sd}{daily sunshine duration (hours)}
 
-\item{Rs}{daily global solar radiation (MJ m-2 day-1)}
+\item{Rs}{daily total solar radiation (MJ m-2 day-1)}
 
 \item{Ws}{daily wind speed (m/s) at 2m above ground level}
 }

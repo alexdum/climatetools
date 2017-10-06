@@ -13,7 +13,7 @@
 #'@param RHmax daily maximum relative humidity (\%)
 #'@param RHmin daily minimum relative humidity (\%)
 #'@param Sd daily sunshine duration (hours)
-#'@param Rs daily total solar radiation (MJ m-2 day-1)
+#'@param Rs daily global solar radiation (MJ m-2 day-1)
 #'@param Ws daily wind speed (m/s) at 2m above ground level
 #'@references http://www.fao.org/docrep/X0490E/x0490e08.htm
 #'@examples
@@ -114,33 +114,38 @@ et_0 <- function(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax = NA, RH
   # Step 16: Clear sky solar radiation (Rso)
   rs0 <- (0.75 + 0.00002*Alt)*ra
 
-  # sloar radiation from sunshine duration
-  # daylight hours (N)
-  if (!is.na(Sd[1])) {
-    n <- 24/pi*wsh
-    rs <- (0.25 + 0.50*(ds/n))*ra
+  # daca nu ai radiatie si stralucire return NA
+  if (is.na(Sd) & is.na(Rs)) {
+    return(NA)
+  } else {
+    # sloar radiation from sunshine duration
+    # daylight hours (N)
+    if (!is.na(Sd[1])) {
+      n <- 24/pi*wsh
+      rs <- (0.25 + 0.50*(ds/n))*ra
+    }
+
+    # Step 17: Net solar or net shortwave radiation (Rns)
+    rns <- (1 - 0.23)*rs
+
+    # Step 18: Net outgoing long wave solar radiation (Rnl)
+    rnl <- 0.000000004903*((tmax + 273.16)^4 + (tmin + 273.16)^4)/2*(0.34 - 0.14*sqrt(ea))*(1.35*(rs/rs0) - 0.35)
+
+    # Step 19: Net radiation (Rn)
+    rn <- rns - rnl
+
+    # To express the net radiation (Rn) in equivalent of evaporation (mm) (Rng)
+    rng <- 0.408 * rn
+
+    # FS1. Radiation term (ETrad)
+    ETrad <- Dt * rng
+
+    # FS2. Wind term (ETwind)
+    ETwind = Pt * Tt * (es - ea)
+
+    ET0 <-  round(ETwind + ETrad,1)
+    return(ET0)
   }
-
-  # Step 17: Net solar or net shortwave radiation (Rns)
-  rns <- (1 - 0.23)*rs
-
-  # Step 18: Net outgoing long wave solar radiation (Rnl)
-  rnl <- 0.000000004903*((tmax + 273.16)^4 + (tmin + 273.16)^4)/2*(0.34 - 0.14*sqrt(ea))*(1.35*(rs/rs0) - 0.35)
-
-  # Step 19: Net radiation (Rn)
-  rn <- rns - rnl
-
-  # To express the net radiation (Rn) in equivalent of evaporation (mm) (Rng)
-  rng <- 0.408 * rn
-
-  # FS1. Radiation term (ETrad)
-  ETrad <- Dt * rng
-
-  # FS2. Wind term (ETwind)
-  ETwind = Pt * Tt * (es - ea)
-
-  ET0 <-  round(ETwind + ETrad,1)
-  return(ET0)
 }
 
 

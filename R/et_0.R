@@ -25,7 +25,7 @@
 #'plot(buc_baneasa$Date, buc_baneasa$Sd, type = "l")
 
 #'@export
-et_0 <- function(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax = NA, RHmin = NA, Sd = NA, Rs = NA, Ws) {
+et_0 <- function(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax = NA, RHmin = NA, Sd = NA, Rs = NA, Ws, Rads = "N") {
 
   # dd <- read.csv("data-raw/bucharest_baneasa.csv")
   # Lon = 4.3517
@@ -144,7 +144,11 @@ et_0 <- function(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax = NA, RH
     ETwind = Pt * Tt * (es - ea)
 
     ET0 <-  round(ETwind + ETrad,1)
-    return(ET0)
+    if (Rads = "Y") {
+      return(cbind(ET0, rns, rnl))
+    } else {
+      return(ET0)
+    }
   }
 }
 

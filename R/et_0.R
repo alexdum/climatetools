@@ -144,13 +144,15 @@ et_0 <- function(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax = NA, RH
     ETwind = Pt * Tt * (es - ea)
 
     ET0 <-  round(ETwind + ETrad,1)
-    if (Rads = "Y") {
+
+    if (Rads == "Y") {
       return(cbind(ET0, rns, rnl))
     } else {
       return(ET0)
     }
   }
 }
+
 
 
 et_0 <- Vectorize(et_0)

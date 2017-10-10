@@ -15,6 +15,7 @@
 #'@param Sd daily sunshine duration (hours)
 #'@param Rs daily global solar radiation (MJ m-2 day-1)
 #'@param Ws daily wind speed (m/s) at 2m above ground level
+#'@param Rads if is TRUE return shortwave and longwave radiation
 #'@references http://www.fao.org/docrep/X0490E/x0490e08.htm
 #'@examples
 #'data(buc_baneasa)

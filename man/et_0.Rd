@@ -5,7 +5,7 @@
 \title{The FAO Penman-Monteith crop reference evapotranspiration}
 \usage{
 et_0(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax = NA,
-  RHmin = NA, Sd = NA, Rs = NA, Ws)
+  RHmin = NA, Sd = NA, Rs = NA, Ws, Rads = F)
 }
 \arguments{
 \item{Alt}{station altitude (m)}
@@ -31,6 +31,8 @@ et_0(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax = NA,
 \item{Rs}{daily global solar radiation (MJ m-2 day-1)}
 
 \item{Ws}{daily wind speed (m/s) at 2m above ground level}
+
+\item{Rads}{if is TRUE return shortwave and longwave radiation}
 }
 \description{
 The panel of experts recommended  in May 1990 the adoption of the

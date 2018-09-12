@@ -15,6 +15,16 @@ ws[164, "Lon"] <- 27.28333333
 ws[164, "Lat"] <- 45.08333333
 ws[164,"CMR"] <- "MUNTENIA"
 
+# completeaza statie Sinaia Mănăstire
+ws[165,"CODGE"] <- 521534
+ws[165,"JU"] <- "PH"
+ws[165,"X"] <- 543110.5
+ws[165,"Y"] <- 428607.9
+ws[165,"Z"] <- 560
+ws[165, "Lon"] <- 25.548755
+ws[165, "Lat"] <- 45.355916
+ws[165,"CMR"] <- "MUNTENIA"
+
 
 # adauga rugozitate -------------------------------------------------------
 rug <- raster("data-raw/rugozitate.tif")

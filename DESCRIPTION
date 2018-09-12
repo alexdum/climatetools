@@ -2,7 +2,7 @@ Package: climatetools
 Type: Package
 Title: Tools and data for weather and climate analysis
 Version: 0.1-99
-Date: 2015-10-01
+Date: 2018-09-01
 Depends:
     R (>= 3.1.0)
 Author: Alexandru Dumitrescu

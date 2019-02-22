@@ -7,12 +7,13 @@ Depends:
     R (>= 3.1.0)
 Author: Alexandru Dumitrescu <alexandru.dumitrescu@gmail.com>
 Maintainer: Alexandru Dumitrescu <alexandru.dumitrescu@gmail.com>
-Description: More about what it does (maybe more than one line)
+Description: More about what it does (maybe more than one line).
 License: GPL (>= 2)
 URL: http://github.com/alexdum/climatetools
 BugReports: http://github.com/alexdum/climatetools/issues
 Imports:
   maptools,
   sp
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 LazyData: true
+Encoding: UTF-8

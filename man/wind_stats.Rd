@@ -9,7 +9,7 @@ wind_stats(x, rho = 1.225)
 \arguments{
 \item{x}{a numeric vector containing hourly wind speed data}
 
-\item{rho}{air density. Default value is \eqn{1.225 kgm^−3} for a
+\item{rho}{air density. Default value is 1.225 kgm^−3 for a
 temperature of 15°C and a standard sea level pressure of 1013.25 hPa}
 }
 \value{

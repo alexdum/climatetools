@@ -22,7 +22,9 @@
 #' # convert wind speed form 10 magl to 2 magl
 #'ws2m <- wind_log(buc_baneasa$Ws,10, 0.1, 2)
 #' # compute ET0
-#'et <- et_0( Alt = 90, Lat = 44.51072, Dates = as.Date(buc_baneasa$Date),Tmax = buc_baneasa$Tmax, Tmin = buc_baneasa$Tmax, Rh = buc_baneasa$Rh, Sd = buc_baneasa$Sd, Ws = ws2m)
+#'et <- et_0( Alt = 90, Lat = 44.51072, Dates = as.Date(buc_baneasa$Date),
+#'Tmax = buc_baneasa$Tmax, Tmin = buc_baneasa$Tmax, Rh = buc_baneasa$Rh,
+#'Sd = buc_baneasa$Sd, Ws = ws2m)
 #'plot(buc_baneasa$Date, buc_baneasa$Sd, type = "l")
 
 #'@export

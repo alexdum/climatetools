@@ -18,6 +18,7 @@
 #'\item max. power wind speed:
 #'\item wind power density:
 #'}
+#'@importFrom stats sd
 #'@export
 
 

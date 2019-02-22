@@ -14,3 +14,4 @@ knitr::opts_chunk$set(
 )
 ```
 Tools for climate data analysis.
+[![Build Status](https://travis-ci.com/alexdum/climatetools.svg?branch=master)](https://travis-ci.com/alexdum/climatetools)

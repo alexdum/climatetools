@@ -24,7 +24,7 @@ ws[165,"Z"] <- 560
 ws[165, "Lon"] <- 25.548755
 ws[165, "Lat"] <- 45.355916
 ws[165,"CMR"] <- "MUNTENIA"
-ws[165,"NUME"] <- "Sinaia Mănăstire"
+ws[165,"NUME"] <- "Sinaia Manastire"
 
 
 # adauga rugozitate -------------------------------------------------------
@@ -48,7 +48,7 @@ names(cau)[5:7] <- c("Cau_0_20","Cau_0_50","Cau_0_100")
 
 ws <- merge(ws,cau[,c("co","Cau_0_20","Cau_0_50","Cau_0_100")], by.x = "CODST", by.y = "co", all.x = T)
 
-devtools::use_data(ws, overwrite = TRUE)
+usethis::use_data(ws, overwrite = TRUE)
 
 
 

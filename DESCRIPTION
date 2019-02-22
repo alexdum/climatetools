@@ -6,7 +6,7 @@ Date: 2018-09-01
 Depends:
     R (>= 3.1.0)
 Author: Alexandru Dumitrescu <alexandru.dumitrescu@gmail.com>
-Maintaner: Alexandru Dumitrescu <alexandru.dumitrescu@gmail.com>
+Maintainer: Alexandru Dumitrescu <alexandru.dumitrescu@gmail.com>
 Description: More about what it does (maybe more than one line)
 License: GPL (>= 2)
 URL: http://github.com/alexdum/climatetools

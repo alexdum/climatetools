@@ -10,7 +10,7 @@ wind_stats(x, rho = 1.225)
 \item{x}{a numeric vector containing hourly wind speed data}
 
 \item{rho}{air density. Default value is 1.225 kgm^−3 for a
-temperature of 15°C and a standard sea level pressure of 1013.25 hPa}
+temperature of 15 degree Celsius and a standard sea level pressure of 1013.25 hPa}
 }
 \value{
 A list with four components:

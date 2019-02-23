@@ -8,7 +8,7 @@ Depends:
 Author: Alexandru Dumitrescu <alexandru.dumitrescu@gmail.com>
 Maintainer: Alexandru Dumitrescu <alexandru.dumitrescu@gmail.com>
 Description: More about what it does (maybe more than one line).
-License:  GPL-2 | MIT
+License: GPL-2 | MIT
 URL: http://github.com/alexdum/climatetools
 BugReports: http://github.com/alexdum/climatetools/issues
 Imports:
@@ -17,3 +17,5 @@ Imports:
 RoxygenNote: 6.1.1
 LazyData: true
 Encoding: UTF-8
+Suggests: 
+    covr

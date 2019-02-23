@@ -8,7 +8,7 @@ Depends:
 Author: Alexandru Dumitrescu <alexandru.dumitrescu@gmail.com>
 Maintainer: Alexandru Dumitrescu <alexandru.dumitrescu@gmail.com>
 Description: More about what it does (maybe more than one line).
-License: GPL (>= 2)
+License:  GPL-2 | MIT + file LICENSE
 URL: http://github.com/alexdum/climatetools
 BugReports: http://github.com/alexdum/climatetools/issues
 Imports:

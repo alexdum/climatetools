@@ -69,10 +69,10 @@ et_0 <- function(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax = NA, RH
   # Atmospheric Pressure (P) kPa
   P <- 101.3*(((293 - 0.0065*Alt)/293))^5.26
 
-  # Slope of saturation vapor pressure curve (Δ) kPa/°C
+  # Slope of saturation vapor pressure curve (delta) kPa/degree C
   D <- 4098*(0.6108*exp(17.27*tt/(tt + 237.3)))/(tt + 237.3)^2
 
-  # Psychrometric constant (γ)  kPa °C-1
+  # Psychrometric constant (lambda)  kPa degree C-1
   g <- 0.000665*P
 
   # Delta Term (DT) (auxiliary calculation for Radiation Term)
@@ -108,7 +108,7 @@ et_0 <- function(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax = NA, RH
   #  Conversion of latitude (φ) in degrees to radians
   lat.rad <- pi/180*lat
 
-  # Step 14: Sunset hour angle (ωs)
+  # Step 14: Sunset hour angle (us)
   wsh <- acos(-tan(lat.rad)*tan(d))
 
   # Step 15: Extraterrestrial radiation (Ra)

@@ -5,10 +5,10 @@ Version: 0.6-3
 Date: 2019-03-01
 Depends:
     R (>= 3.1.0)
-Authors@R: c(person(given = "Alexandru", family = "Dumitrescu"",
-             role = c("aut", "cre"),
-             email = "alexandru.dumitrescu@gmail.com",
-             comment = c(ORCID = "0000-0002-3361-483X"))
+Authors@R: c(person(given = "Alexandru", family = "Dumitrescu",
+              role = c("aut", "cre"),
+              email = "alexandru.dumitrescu@gmail.com",
+             comment = c(ORCID = "0000-0002-3361-483X")))
 Maintainer: Alexandru Dumitrescu <alexandru.dumitrescu@gmail.com>
 Description: Tools and data for weather and climate analysis.
 License: GPL-2

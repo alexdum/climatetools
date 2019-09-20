@@ -1,9 +1,12 @@
 library(rgdal)
 library(raster)
-ws<-data.frame(readOGR(dsn="data-raw",layer="statii_aprilie_2008",stringsAsFactors = F))
-ws$coords.x1<-NULL
-ws$coords.x2<-NULL
-ws$optional<-NULL
+ws.old <- data.frame(readOGR(dsn = "data-raw",layer = "statii_aprilie_2008",stringsAsFactors = F))
+ws.old <- ws.old[, !names(ws.old) %in% c("coords.x1", "coords.x2", "optional")]
+
+ws <- data.frame(readOGR(dsn = "data-raw",layer = "statii_2019",stringsAsFactors = F))
+ws <- ws[, !names(ws) %in% c("coords.x1", "coords.x2", "optional")]
+names(ws)[c(8:11)] <- c("Lon", "Z", "X","Y")
+
 
 # completeaza statia Faurei
 ws[164,"CODGE"] <- 505719
@@ -27,9 +30,12 @@ ws[165,"CMR"] <- "MUNTENIA"
 ws[165,"NUME"] <- "Sinaia Mănăstire"
 
 
+
+
+
 # adauga rugozitate -------------------------------------------------------
 rug <- raster("data-raw/rugozitate.tif")
-rug[rug<0] <- NA
+rug[rug < 0] <- NA
 sp <- SpatialPoints(cbind(ws$X, ws$Y))
 ex <- round(extract(rug, sp),3)
 ws$Rugozitate <- ex
@@ -38,6 +44,12 @@ ws$Rugozitate <- ex
 # adauga posturi ----------------------------------------------------------
 
 post <- read.csv("data-raw/posturi_co_2016 .csv")
+
+post <- data.frame(
+                   CMR = post$CMR, JU = post$JU, CODST = post$CODST, CODGE = post$CODGE,
+                   NUME = post$NUME, Autonoma = NA, Lat = post$Lat, Lon = post$Lon,
+                   Z = post$Z, X = post$X, Y = post$Y, Rugozitate = NA
+                   )
 
 ws <- rbind(ws, post)
 

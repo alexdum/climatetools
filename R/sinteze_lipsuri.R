@@ -18,8 +18,8 @@
 
 sinteze_lipsuri <- function(path,missing)
 {
-  norm <- read.table(path,skip = 4,nrows = 263,sep = ";",na.strings = "-")
-  lipsuri <- read.table(path,skip = 268,sep = ";",na.strings = "-")
+  norm <- read.table(path,skip = 4,nrows = 265,sep = ";",na.strings = "-")
+  lipsuri <- read.table(path,skip = 270,sep = ";",na.strings = "-")
   lipsuri[is.na(lipsuri)] <- 0
   norm <- norm[lipsuri[,15] <= missing,]
   #numele coloanelor

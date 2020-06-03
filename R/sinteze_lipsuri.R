@@ -16,7 +16,7 @@
 #' @importFrom utils read.table
 #' @export
 
-sinteze_lipsuri <- function(path,missing)
+sinteze_lipsuri <- function(path,missing = 0)
 {
   norm <- read.table(path,skip = 4,nrows = 265,sep = ";",na.strings = "-")
   lipsuri <- read.table(path,skip = 270,sep = ";",na.strings = "-")

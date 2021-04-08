@@ -5,7 +5,7 @@
 \title{Citeste tabelele din sinteze climatice si alege perioada (procentele) cu
 date lipsa}
 \usage{
-sinteze_lipsuri(path, missing)
+sinteze_lipsuri(path, missing = 0)
 }
 \arguments{
 \item{path}{caracter reprezentand calea catre tabelul *.csv descarcat din

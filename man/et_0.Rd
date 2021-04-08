@@ -4,8 +4,21 @@
 \alias{et_0}
 \title{The FAO Penman-Monteith crop reference evapotranspiration}
 \usage{
-et_0(Alt, Lat, Dates, Tavg = NA, Tmax, Tmin, Rh = NA, RHmax = NA,
-  RHmin = NA, Sd = NA, Rs = NA, Ws, Rads = F)
+et_0(
+  Alt,
+  Lat,
+  Dates,
+  Tavg = NA,
+  Tmax,
+  Tmin,
+  Rh = NA,
+  RHmax = NA,
+  RHmin = NA,
+  Sd = NA,
+  Rs = NA,
+  Ws,
+  Rads = F
+)
 }
 \arguments{
 \item{Alt}{station altitude (m)}

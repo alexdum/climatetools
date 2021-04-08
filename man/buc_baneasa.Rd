@@ -4,7 +4,8 @@
 \name{buc_baneasa}
 \alias{buc_baneasa}
 \title{Bucharest Baneasa daily climate data}
-\format{A data frame with 365 rows and 9 variables:
+\format{
+A data frame with 365 rows and 9 variables:
 \itemize{
   \item CODGE:    geographical ID
   \item Date:     date field
@@ -13,7 +14,8 @@
   \item Tmax:     maximum temperature (°C)
   \item Ws:       mean wind speed (°m/s)
   \item Rh:       relative humidity (\%)
-}}
+}
+}
 \source{
 METEO ROMANIA \url{http://www.meteoromania.ro/}
 }

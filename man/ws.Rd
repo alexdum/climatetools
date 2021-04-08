@@ -4,7 +4,8 @@
 \name{ws}
 \alias{ws}
 \title{Weather stations METEOROMANIA.}
-\format{A data frame with 206 rows and 14 variables:
+\format{
+A data frame with 206 rows and 14 variables:
 \itemize{
   \item CMR:     Regional Meteorological Center
   \item JU:      County
@@ -22,7 +23,8 @@
   \item Cau_0_20: Capacitatea de aap utila a solului (m3/ha) 0-20 cm
   \item Cau_0_50: Capacitatea de aap utila a solului (m3/ha) 0-50 cm
   \item Cau_0_100: Capacitatea de aap utila a solului (m3/ha) 0-100 cm
-}}
+}
+}
 \source{
 METEO ROMANIA \url{http://www.meteoromania.ro/}
 }

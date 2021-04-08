@@ -7,7 +7,8 @@
 #'@param Z0 roughness length in the current wind direction
 #'@param Z height above ground level for velocity to be calculated
 #'@return Wind speed values computed at certain height (Z)
-#'@references http://www.fao.org/3/X0490E/x0490e07.htm#wind%20speed
+#'@references
+#'Tennekes, H. "The logarithmic wind profile." Journal of the Atmospheric Sciences 30, no. 2 (1973): 234-238.
 #'@export
 wind_log <- function (Vref, Zref, Z0, Z) {
 

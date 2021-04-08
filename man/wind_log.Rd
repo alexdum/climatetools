@@ -24,5 +24,5 @@ by using the log law. The increase or decrease of wind speed as a function of
 height above ground can be computed by this logarithmic expression.
 }
 \references{
-http://www.fao.org/3/X0490E/x0490e07.htm#wind%20speed
+Tennekes, H. "The logarithmic wind profile." Journal of the Atmospheric Sciences 30, no. 2 (1973): 234-238.
 }

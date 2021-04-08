@@ -7,7 +7,7 @@
 #'@param Z0 roughness length in the current wind direction
 #'@param Z height above ground level for velocity to be calculated
 #'@return Wind speed values computed at certain height (Z)
-#'@references http://www.fao.org/docrep/X0490E/x0490e08.htm;
+#'@references http://www.fao.org/3/X0490E/x0490e07.htm#wind%20speed;
 #'http://www.fao.org/docrep/X0490E/x0490e06.htm
 #'@export
 wind_log <- function (Vref, Zref, Z0, Z) {

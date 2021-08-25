@@ -18,7 +18,7 @@ ws[164,"Z"] <- 67
 ws[164, "Lon"] <- 26.523548
 ws[164, "Lat"] <- 44.452850
 ws[164,"CMR"] <- "MUNTENIA"
-ws[166,"NUME"] <- "Fundulea"
+ws[164,"NUME"] <- "Fundulea"
 
 # completeaza statia Faurei
 ws[165,"CODGE"] <- 505719
@@ -29,7 +29,7 @@ ws[165,"Z"] <- 41
 ws[165, "Lon"] <- 27.28333333
 ws[165, "Lat"] <- 45.08333333
 ws[165,"CMR"] <- "MUNTENIA"
-ws[166,"NUME"] <- "Faurei"
+ws[165,"NUME"] <- "Faurei"
 
 # completeaza statie Sinaia Mănăstire
 ws[166,"CODGE"] <- 521534

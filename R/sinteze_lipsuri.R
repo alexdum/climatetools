@@ -16,15 +16,14 @@
 #' @importFrom utils read.table
 #' @export
 
-sinteze_lipsuri <- function(path,missing = 0)
-{
-  norm <- read.table(path,skip = 4,nrows = 265,sep = ";",na.strings = "-")
-  lipsuri <- read.table(path,skip = 270,sep = ";",na.strings = "-")
+sinteze_lipsuri <- function(path,missing = 0) {
+  norm <- read.table(path,skip = 4,nrows = 271,sep = ";",na.strings = "-")
+  lipsuri <- read.table(path,skip = 276,sep = ";",na.strings = "-")
   lipsuri[is.na(lipsuri)] <- 0
   norm <- norm[lipsuri[,15] <= missing,]
   #numele coloanelor
   names(norm) <- c("CODGE","NUME","Jan","Feb","Mar","Apr","May","Jun","Jul",
-                 "Aug","Sep","Oct","Nov","Dec")
+                   "Aug","Sep","Oct","Nov","Dec")
 
   return(norm[,1:14])
 }

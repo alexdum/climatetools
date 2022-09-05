@@ -42,6 +42,44 @@ ws[166, "Lat"] <- 45.355916
 ws[166,"CMR"] <- "MUNTENIA"
 ws[166,"NUME"] <- "Sinaia Mănăstire"
 
+
+# completeaza statie Perisoru
+ws[167,"CODGE"] <- 423654
+ws[167,"JU"] <- "IL"
+ws[167,"X"] <- 681819.8
+ws[167,"Y"] <- 362702.8
+ws[167,"Z"] <- 36
+ws[167, "Lon"] <- 27.566412
+ws[167, "Lat"] <- 44.390526
+ws[167,"CMR"] <- "MUNTENIA"
+ws[167,"NUME"] <- "Perișoru"
+
+# completeaza statie Rânca
+ws[168,"CODGE"] <- 517341
+ws[168,"JU"] <- "GJ"
+ws[168,"X"] <- 398244.3
+ws[168,"Y"] <- 417672.4
+ws[168,"Z"] <- 1585
+ws[168, "Lon"] <- 23.70194
+ws[168, "Lat"] <- 45.25139
+ws[168,"CMR"] <- "OLTENIA"
+ws[168,"NUME"] <- "Rânca"
+
+# completeaza statie	STRAJA-HD
+ws[169,"CODGE"] <- 518315
+ws[169,"JU"] <- "HD"
+ws[169,"X"] <- 362938.5
+ws[169,"Y"] <- 424734.6
+ws[169,"Z"] <- 1657
+ws[169, "Lon"] <- 23.25027778
+ws[169, "Lat"] <- 45.30888889
+ws[169,"CMR"] <- "OLTENIA"
+ws[169,"NUME"] <- "Straja HD"
+
+
+
+
+
 ws <- ws[order(ws$NUME),]
 
 
